@@ -1,0 +1,77 @@
+station_no,station_name,site_name,stationparameter_name,ts_path,ts_unitsymbol,river_name,BASSIN_INFOCRUE,BASSIN_GESTION_TEXT,station_local_x,station_local_y,station_elevation,station_status,CATCHMENT_SIZE,ts_id
+7141,HUY,Direction de la Gestion hydrologique,Hauteur,DGH/7141/H/Cmd.Rel.Abs.Comp-Alarmes,m,Meuse moyenne,Meuse moyenne / 33,Meuse moyenne (NA),211378.0,134318.0,,Active,,246052010
+L6470,Ambresin,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6470/H/Cmd.Rel.Abs.Comp-Alarmes,m,Mehaigne,Mehaigne et affluents / 36,Mehaigne,197782.0,146460.0,,Active,"194,72 km²",174439010
+L5860,Theux,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L5860/H/Cmd.Rel.Abs.Comp-Alarmes,m,Hoegne,Vesdre et affluents / 38,Vesdre,252201.0,137368.0,,Active,"189,00 km²",167297010
+9914,REULAND,Direction de la Gestion hydrologique,Hauteur,DGH/9914/H/Cmd.Rel.Abs.Comp-Alarmes,m,Our,Our et affluents / 42,Our,277320.0,98989.0,,Active,"356,87 km²",256264010
+5804,ANGLEUR GR BAT. Av,Direction de la Gestion hydrologique,Hauteur,DGH/5804/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ourthe inférieure,Ourthe inférieure et affluents / 43,Ourthe inférieure,237559.0,145592.0,,Closed,,240019010
+L7500,Limont,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7500/H/Cmd.Rel.Abs.Comp-Alarmes,m,Yerne,Geer et affluents / 37,Geer,216892.0,150178.0,,Active,"28,14 km²",187956010
+L7670,La Gleize,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7670/H/Cmd.Rel.Abs.Comp-Alarmes,m,Amblève,Amblève et affluents / 41,Amblève,255524.0,122167.0,,Active,"776,12 km²",190280010
+7244,HUCCORGNE,Direction de la Gestion hydrologique,Hauteur,DGH/7244/H/Cmd.Rel.Abs.Comp-Alarmes,m,Mehaigne,Mehaigne et affluents / 36,Mehaigne,206601.0,139948.0,,Active,"305,10 km²",246629010
+L6660,Sippenaeken,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6660/H/Cmd.Rel.Abs.Comp-Alarmes,m,Gueule,Affluents de la Basse Meuse / 30,Gueule,260928.0,161171.0,,Active,"121,00 km²",176655010
+L5630,Hamoir,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L5630/H/Cmd.Rel.Abs.Comp-Alarmes,m,Néblon,Ourthe moyenne et affluents / 44,Ourthe moyenne,231494.0,124110.0,,Active,"76,00 km²",165377010
+6387,EUPEN,Direction de la Gestion hydrologique,Hauteur,DGH/6387/H/Cmd.Rel.Abs.Comp-Alarmes,m,Vesdre,Vesdre et affluents / 38,Vesdre,268078.442,147118.802,,Active,,242514010
+6353,DOLHAIN,Direction de la Gestion hydrologique,Hauteur sonde,DGH/6353/H_sonde/Cmd.Rel.Abs.Comp-Alarmes,m,Vesdre,Vesdre et affluents / 38,,261562.768,145782.416,,Active,,379300010
+L6080,Reuland,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6080/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ulf,Our et affluents / 42,Our,277217.0,99906.0,,Active,"57,00 km²",169941010
+5447,LIXHE Bief Amont,Direction de la Gestion hydrologique,Hauteur,DGH/5447/H/Cmd.Rel.Abs.Comp-Alarmes,m,Basse Meuse,Basse Meuse / 31,Basse Meuse (NA),243197.0,160314.0,,Active,,238955010
+L7870,Marchin (bis),Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7870/H/Cmd.Rel.Abs.Comp-Alarmes,m,Hoyoux,Hoyoux et affluents / 35,Hoyoux,211748.0,132797.0,,Active,"248,83 km²",192542010
+L6090,Lommersweiler,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6090/H/Cmd.Rel.Abs.Comp-Alarmes,m,Die Braunlauf,Our et affluents / 42,Our,277350.0,104134.0,,Active,"64,00 km²",170065010
+L7600,Foret,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7600/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ruisseau des Fonds de Forêt,Vesdre et affluents / 38,Vesdre,242555.0,142596.0,,Active,"39,79 km²",189428010
+L6461,Marneffe,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6461/H/Cmd.Rel.Abs.Comp-Alarmes,m,Burdinale,Mehaigne et affluents / 36,Mehaigne,205042.0,140746.0,,Active,"26,78 km²",174315010
+L5990,Marchin,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L5990/H/Cmd.Rel.Abs.Comp-Alarmes,m,Hoyoux,Hoyoux et affluents / 35,Hoyoux,212846.0,131678.0,,Active,"239,00 km²",168423010
+6832,TROIS-PONTS,Direction de la Gestion hydrologique,Hauteur,DGH/6832/H/Cmd.Rel.Abs.Comp-Alarmes,m,Salm,Amblève et affluents / 41,Amblève,257242.0,118075.0,,Active,"198,85 km²",244279010
+6991,MALMEDY  Warchenne,Direction de la Gestion hydrologique,Hauteur,DGH/6991/H/Cmd.Rel.Abs.Comp-Alarmes,m,Warchenne,Amblève et affluents / 41,Amblève,268278.0,124997.0,,Active,"30,45 km²",245004010
+7137,AMPSIN Bief Amont,Direction de la Gestion hydrologique,Hauteur,DGH/7137/H/Cmd.Rel.Abs.Comp-Alarmes,m,Meuse moyenne,Meuse moyenne / 33,Meuse moyenne (NA),215216.0,136486.0,,Active,"16416,26 km²",245773010
+5811,STREUPAS,Direction de la Gestion hydrologique,Hauteur sonde,DGH/5811/H_sonde/Cmd.Rel.Abs.Comp-Alarmes,m,Ourthe inférieure,Ourthe inférieure et affluents / 43,Ourthe inférieure,237626.0,144478.0,,Active,,240333010
+5291,KELMIS (LA CALAMINE),Direction de la Gestion hydrologique,Hauteur,DGH/5291/H/Cmd.Rel.Abs.Comp-Alarmes,m,Gueule,Affluents de la Basse Meuse / 30,Gueule,265341.0,156616.0,,Inactive,,238670010
+6671,TARGNON,Direction de la Gestion hydrologique,Hauteur,DGH/6671/H/Cmd.Rel.Abs.Comp-Alarmes,m,Amblève,Amblève et affluents / 41,Amblève,250013.0,123454.0,,Active,"806,85 km²",243520010
+L6040,Grandville,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6040/H/Cmd.Rel.Abs.Comp-Alarmes,m,Yerne,Geer et affluents / 37,Geer,218889.0,156963.0,,Active,"62,30 km²",169445010
+6228,CHAUDFONTAINE Pisc,Direction de la Gestion hydrologique,Hauteur,DGH/6228/H/Cmd.Rel.Abs.Comp-Alarmes,m,Vesdre,Vesdre et affluents / 38,Vesdre,240980.0,142873.0,,Active,"683,26 km²",242295010
+6651,REMOUCHAMPS,Direction de la Gestion hydrologique,Hauteur,DGH/6651/H/Cmd.Rel.Abs.Comp-Alarmes,m,Amblève,Amblève et affluents / 41,Amblève,245200.0,130754.0,,Active,,243391010
+L6510,Stavelot,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6510/H/Cmd.Rel.Abs.Comp-Alarmes,m,Amblève,Amblève et affluents / 41,Amblève,257828.0,119661.0,,Active,"491,63 km²",174883010
+5896,CHANXHE,Direction de la Gestion hydrologique,Hauteur sonde,DGH/5896/H_sonde/Cmd.Rel.Abs.Comp-Alarmes,m,Ourthe inférieure,Ourthe inférieure et affluents / 43,Meuse moyenne (NA),236716.0,132378.0,,Active,,371898010
+5572,BERGILERS Amont,Direction de la Gestion hydrologique,Hauteur,DGH/5572/H/Cmd.Rel.Abs.Comp-Alarmes,m,Geer,Geer et affluents / 37,Geer,216964.0,156990.0,,Active,"123,39 km²",239329010
+5921,TABREUX,Direction de la Gestion hydrologique,Hauteur,DGH/5921/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ourthe moyenne,Ourthe moyenne et affluents / 44,Ourthe moyenne,232853.0,125886.0,,Active,"1607,00 km²",240759010
+6971,WIRTZFELD,Direction de la Gestion hydrologique,Hauteur,DGH/6971/H/Cmd.Rel.Abs.Comp-Alarmes,m,Holzwarche,Amblève et affluents / 41,Amblève,284295.0,125553.0,,Active,"31,99 km²",244797010
+L6900,Awirs,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6900/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ruisseau des Awirs,Affluents de la Meuse Moyenne aval / 53,Meuse Moyenne aval (affluents),223833.0,142926.0,,Active,"33,87 km²",179751010
+6621,MARTINRIVE,Direction de la Gestion hydrologique,Hauteur,DGH/6621/H/Cmd.Rel.Abs.Comp-Alarmes,m,Amblève,Amblève et affluents / 41,Amblève,240021.0,130556.0,,Active,"1067,53 km²",243172010
+6517,POLLEUR,Direction de la Gestion hydrologique,Hauteur,DGH/6517/H/Cmd.Rel.Abs.Comp-Alarmes,m,Hoegne,Vesdre et affluents / 38,Vesdre,257072.0,137313.0,,Active,,242660010
+7102,LIEGE,Direction de la Gestion hydrologique,Hauteur sonde,DGH/7102/Habs_sonde/Cmd.Abs.Comp-Alarmes,m,Meuse moyenne,Meuse moyenne / 33,Meuse moyenne (NA),235533.0,145362.0,,Active,,245267010
+L7511,Val-dieu,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7511/H/Cmd.Rel.Abs.Comp-Alarmes,m,Berwinne,Affluents de la Basse Meuse / 30,Berwinne,249786.0,156184.0,,Active,"48,36 km²",188204010
+5857,MERY,Direction de la Gestion hydrologique,Hauteur,DGH/5857/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ourthe inférieure,Ourthe inférieure et affluents / 43,Ourthe inférieure,236419.0,138182.0,,Active,,240569010
+L7290,Trou de Bra,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7290/H/Cmd.Rel.Abs.Comp-Alarmes,m,Lienne,Amblève et affluents / 41,Amblève,247026.0,115885.0,,Active,"104,38 km²",186582010
+6526,BELLEHEID,Direction de la Gestion hydrologique,Hauteur,DGH/6526/H/Cmd.Rel.Abs.Comp-Alarmes,m,Hoegne,Vesdre et affluents / 38,Vesdre,262860.0,134258.0,,Active,"19,64 km²",242789010
+L7150,Verviers,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7150/H/Cmd.Rel.Abs.Comp-Alarmes,m,Vesdre,Vesdre et affluents / 38,Vesdre,254550.0,143074.0,,Active,"338,15 km²",182741010
+6946,BEVERCE,Direction de la Gestion hydrologique,Hauteur,DGH/6946/H/Cmd.Rel.Abs.Comp-Alarmes,m,Warche,Amblève et affluents / 41,Amblève,269012.0,126873.0,,Active,"149,14 km²",244583010
+9926,SCHOENBERG,Direction de la Gestion hydrologique,Hauteur,DGH/9926/H/Cmd.Rel.Abs.Comp-Alarmes,m,Our,Our et affluents / 42,Our,285005.0,110419.0,,Active,"100,50 km²",256473010
+L6240,Lorcé,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6240/H/Cmd.Rel.Abs.Comp-Alarmes,m,Lienne,Amblève et affluents / 41,Amblève,249530.0,123011.0,,Active,"147,00 km²",171593010
+5806,ANGLEUR GR BAT. Am,Direction de la Gestion hydrologique,Hauteur,DGH/5806/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ourthe inférieure,Ourthe inférieure et affluents / 43,Ourthe inférieure,237927.0,145415.0,,Active,,240114010
+6753,LASNENVILLE,Direction de la Gestion hydrologique,Hauteur,DGH/6753/H/Cmd.Rel.Abs.Comp-Alarmes,m,Amblève,Amblève et affluents / 41,Amblève,266668.0,120042.0,,Active,"196,23 km²",243909010
+7133,NEUVILLE Bief Aval,Direction de la Gestion hydrologique,Hauteur,DGH/7133/H/Cmd.Rel.Abs.Comp-Alarmes,m,Meuse moyenne,Meuse moyenne / 33,Meuse moyenne (NA),216627.0,136114.0,,Active,,245678010
+L6340,Eben-Emael,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6340/H/Cmd.Rel.Abs.Comp-Alarmes,m,Geer,Geer et affluents / 37,Geer,241312.0,164275.0,,Active,"452,26 km²",172807010
+L5820,Wanze,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L5820/H/Cmd.Rel.Abs.Comp-Alarmes,m,Mehaigne,Mehaigne et affluents / 36,Mehaigne,210171.0,137156.0,,Active,"352,05 km²",167075010
+7228,MODAVE,Direction de la Gestion hydrologique,Hauteur,DGH/7228/H/Cmd.Rel.Abs.Comp-Alarmes,m,Hoyoux,Hoyoux et affluents / 35,Hoyoux,215114.0,126736.0,170.5,Active,"93,98 km²",246405010
+L7410,Weweler,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7410/H/Cmd.Rel.Abs.Comp-Alarmes,m,Our,Our et affluents / 42,Our,277498.0,100084.0,,Active,"276,74 km²",187388010
+7117,IVOZ-RAMET Bief Am,Direction de la Gestion hydrologique,Hauteur,DGH/7117/H/Cmd.Rel.Abs.Comp-Alarmes,m,Meuse moyenne,Meuse moyenne / 33,Meuse moyenne (NA),226214.0,142572.0,,Active,,245399010
+L6330,Ouren,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6330/H/Cmd.Rel.Abs.Comp-Alarmes,m,Our,Our et affluents / 42,Our,276730.0,93821.0,,Active,"382,00 km²",172683010
+L6520,Malmedy,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6520/H/Cmd.Rel.Abs.Comp-Alarmes,m,Warche,Amblève et affluents / 41,Amblève,267464.0,125193.0,,Active,"183,42 km²",175007010
+L5580,Thioux,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L5580/H/Cmd.Rel.Abs.Comp-Alarmes,m,Warche,Amblève et affluents / 41,Amblève,265410.0,120828.0,,Active,"192,00 km²",164793010
+5796,MAREXHE,Direction de la Gestion hydrologique,Hauteur,DGH/5796/H/Cmd.Rel.Abs.Comp-Alarmes,m,Canal Albert,Affluents de la Basse Meuse / 30,Basse Meuse (affluents),238647.0,150149.0,,Active,,239924010
+L7161,Stavelot,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7161/H/Cmd.Rel.Abs.Comp-Alarmes,m,Eau rouge,Amblève et affluents / 41,Amblève,262220.0,121682.0,,Active,,361036010
+L5861,Hoegne,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L5861/H/Cmd.Rel.Abs.Comp-Alarmes,m,Hoegne,Vesdre et affluents / 38,Vesdre,251856.0,139184.0,,Active,,361847010
+5922,HAMOIR,Direction de la Gestion hydrologique,Hauteur sonde,DGH/5922/H_sonde/Cmd.Rel.Abs.Comp-Alarmes,m,Ourthe moyenne,Ourthe moyenne et affluents / 44,Ourthe moyenne,232949.0,124541.0,,Active,"1598,53 km²",399524010
+5904,COMBLAIN-AU-PONT,Direction de la Gestion hydrologique,Hauteur,DGH/5904/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ourthe moyenne,Ourthe moyenne et affluents / 44,Ourthe moyenne,236166.0,131269.0,,Active,,240664010
+L7280,Monteneau,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7280/H/Cmd.Rel.Abs.Comp-Alarmes,m,Amblève,Amblève et affluents / 41,Amblève,274687.0,117920.0,,Active,"109,14 km²",186448010
+L7860,Modave,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L7860/H/Cmd.Rel.Abs.Comp-Alarmes,m,Triffoys,Hoyoux et affluents / 35,Hoyoux,213736.0,129153.0,,Active,"30,36 km²",192418010
+L6300,Vieuxville,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6300/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ruisseau de Lembrée,Ourthe moyenne et affluents / 44,Ourthe moyenne,233071.0,121039.0,,Active,"51,00 km²",172311010
+L6070,Trois-Ponts,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6070/H/Cmd.Rel.Abs.Comp-Alarmes,m,Salm,Amblève et affluents / 41,Amblève,256923.0,118926.0,,Active,"202,00 km²",169817010
+6732,STAVELOT,Direction de la Gestion hydrologique,Hauteur,DGH/6732/H/Cmd.Rel.Abs.Comp-Alarmes,m,Amblève,Amblève et affluents / 41,Amblève,257829.0,119662.0,,Active,"471,67 km²",243785010
+6804,CHEVRON Pont,Direction de la Gestion hydrologique,Hauteur sonde,DGH/6804/H_sonde/Cmd.Rel.Abs.Comp-Alarmes,m,Lienne,Amblève et affluents / 41,Amblève,248729.057,121539.428,,Active,"141,82 km²",377502010
+L6770,Dalhem,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6770/H/Cmd.Rel.Abs.Comp-Alarmes,m,Bolland,Affluents de la Basse Meuse / 30,Berwinne,245581.0,156748.0,,Active,"29,26 km²",178079010
+7242,MOHA,Direction de la Gestion hydrologique,Hauteur,DGH/7242/H/Cmd.Rel.Abs.Comp-Alarmes,m,Mehaigne,Mehaigne et affluents / 36,Mehaigne,207779.0,138112.0,,Active,"343,27 km²",246534010
+5826,SAUHEID,Direction de la Gestion hydrologique,Hauteur,DGH/5826/H/Cmd.Rel.Abs.Comp-Alarmes,m,Ourthe inférieure,Ourthe inférieure et affluents / 43,Ourthe inférieure,236544.0,143595.0,,Active,"2903,80 km²",240474010
+6933,MALMEDY,Direction de la Gestion hydrologique,Hauteur,DGH/6933/H/Cmd.Rel.Abs.Comp-Alarmes,m,Warche,Amblève et affluents / 41,Amblève,267447.0,125199.0,,Active,"183,08 km²",244488010
+L8100,Meeffe,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L8100/H/Cmd.Rel.Abs.Comp-Alarmes,m,Rhée,Mehaigne et affluents / 36,Mehaigne,196266.0,143493.0,,Active,"16,97 km²",195238010
+L6790,Spixhe,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6790/H/Cmd.Rel.Abs.Comp-Alarmes,m,Wayai,Vesdre et affluents / 38,Vesdre,252933.0,135496.0,,Active,"93,78 km²",178291010
+L6390,Dalhem,Direction des Cours d'Eau Non Navigables,Hauteur,DCENN/L6390/H/Cmd.Rel.Abs.Comp-Alarmes,m,Berwinne,Affluents de la Basse Meuse / 30,Berwinne,245623.0,157426.0,,Active,"118,00 km²",173401010
+5436,LIXHE Aval,Direction de la Gestion hydrologique,Hauteur,DGH/5436/H/Cmd.Rel.Abs.Comp-Alarmes,m,Basse Meuse,Basse Meuse / 31,Basse Meuse (NA),242573.0,161861.0,,Active,,238765010
+6981,BULLINGEN,Direction de la Gestion hydrologique,Hauteur,DGH/6981/H/Cmd.Rel.Abs.Comp-Alarmes,m,Warche,Amblève et affluents / 41,Amblève,284647.0,123811.0,,Active,"22,59 km²",244892010

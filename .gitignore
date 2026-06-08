@@ -1,0 +1,36 @@
+# ── Raw data files ─────────────────────────────────────────
+*.nc
+*.zip
+era5_extract/
+corine_extract/
+export/netcdfs/
+
+# ── Logs and temp ──────────────────────────────────────────
+*.log
+Log.log
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# ── SQLite lock files ──────────────────────────────────────
+*.db-wal
+*.db-shm
+*.db-journal
+
+# ── OS files ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Supplementary/diagnostic scripts ──────────────────────
+supplementary/
+
+# ── IDE ────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+
+# NOTE: Databases (*.db) ARE tracked intentionally
+# so collaborators can access data directly.
+# If DBs grow too large for GitHub (>100MB), move to Git LFS:
+# git lfs track "*.db"

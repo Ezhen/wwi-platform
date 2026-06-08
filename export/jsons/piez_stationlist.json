@@ -1,0 +1,3495 @@
+[
+  {
+    "station_no": "2",
+    "station_name": "Affluents de l'Escaut",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "30",
+    "station_name": "Affluents de la Basse Meuse",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "12",
+    "station_name": "Affluents de la Basse Sambre",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "28",
+    "station_name": "Affluents de la Haute Meuse",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "9",
+    "station_name": "Affluents de la Haute Sambre",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "32",
+    "station_name": "Affluents de la Meuse Moyenne amont",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "53",
+    "station_name": "Affluents de la Meuse Moyenne aval",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L5442",
+    "station_name": "Aiseau",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "165526.0",
+    "station_local_y": "121590.0"
+  },
+  {
+    "station_no": "7132",
+    "station_name": "AMAY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "217275.0",
+    "station_local_y": "136622.0"
+  },
+  {
+    "station_no": "L6290",
+    "station_name": "Amberloup",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "232932.0",
+    "station_local_y": "81130.0"
+  },
+  {
+    "station_no": "41",
+    "station_name": "Ambl\u00e8ve et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L6470",
+    "station_name": "Ambresin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "197782.0",
+    "station_local_y": "146460.0"
+  },
+  {
+    "station_no": "L5412",
+    "station_name": "Amougies",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "88408.0",
+    "station_local_y": "159315.0"
+  },
+  {
+    "station_no": "7137",
+    "station_name": "AMPSIN Bief Amont",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "215216.0",
+    "station_local_y": "136486.0"
+  },
+  {
+    "station_no": "3599",
+    "station_name": "ANDERLUES",
+    "site_name": "IDEA",
+    "station_local_x": "142855.828",
+    "station_local_y": "123672.862"
+  },
+  {
+    "station_no": "5808",
+    "station_name": "ANGLEUR (2 BIS)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "237993.0",
+    "station_local_y": "145265.0"
+  },
+  {
+    "station_no": "5803",
+    "station_name": "ANGLEUR Aval RD",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "237364.0",
+    "station_local_y": "145671.0"
+  },
+  {
+    "station_no": "5806",
+    "station_name": "ANGLEUR GR BAT. Am",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "237927.0",
+    "station_local_y": "145415.0"
+  },
+  {
+    "station_no": "5804",
+    "station_name": "ANGLEUR GR BAT. Av",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "237559.0",
+    "station_local_y": "145592.0"
+  },
+  {
+    "station_no": "8063",
+    "station_name": "ANSEREMME",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "188570.0",
+    "station_local_y": "103350.0"
+  },
+  {
+    "station_no": "8067",
+    "station_name": "ANSEREMME Monia",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "187472.0",
+    "station_local_y": "103560.0"
+  },
+  {
+    "station_no": "L8640",
+    "station_name": "Anth\u00e9e",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "176992.0",
+    "station_local_y": "103682.0"
+  },
+  {
+    "station_no": "L7620",
+    "station_name": "Archennes",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "172055.0",
+    "station_local_y": "159931.0"
+  },
+  {
+    "station_no": "9596",
+    "station_name": "ARLON",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "255007.0",
+    "station_local_y": "42169.0"
+  },
+  {
+    "station_no": "2971",
+    "station_name": "ATH",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "108196.0",
+    "station_local_y": "147152.0"
+  },
+  {
+    "station_no": "9781",
+    "station_name": "ATHUS",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "256507.0",
+    "station_local_y": "28397.0"
+  },
+  {
+    "station_no": "L6023",
+    "station_name": "Athus",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "255767.0",
+    "station_local_y": "29235.0"
+  },
+  {
+    "station_no": "9794",
+    "station_name": "AUBANGE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "253845.0",
+    "station_local_y": "28871.0"
+  },
+  {
+    "station_no": "L6530",
+    "station_name": "Aublain",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "152353.0",
+    "station_local_y": "83282.0"
+  },
+  {
+    "station_no": "L6990",
+    "station_name": "Auby-sur-Semois",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "207480.0",
+    "station_local_y": "55800.0"
+  },
+  {
+    "station_no": "5596",
+    "station_name": "AWANS",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "227000.0",
+    "station_local_y": "152205.0"
+  },
+  {
+    "station_no": "L6900",
+    "station_name": "Awirs",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "223833.0",
+    "station_local_y": "142926.0"
+  },
+  {
+    "station_no": "L6050",
+    "station_name": "Baillonville",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "219839.0",
+    "station_local_y": "108499.0"
+  },
+  {
+    "station_no": "L5170",
+    "station_name": "Baisieux",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "101819.0",
+    "station_local_y": "119540.0"
+  },
+  {
+    "station_no": "L6861",
+    "station_name": "Baisieux",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "102137.0",
+    "station_local_y": "119838.0"
+  },
+  {
+    "station_no": "25",
+    "station_name": "Basse Lesse et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "31",
+    "station_name": "Basse Meuse",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "11",
+    "station_name": "Basse Sambre",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "13",
+    "station_name": "Basse Semois et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "9948",
+    "station_name": "BASTOGNE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "246324.0",
+    "station_local_y": "76248.0"
+  },
+  {
+    "station_no": "5649",
+    "station_name": "BATTICE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "253200.0",
+    "station_local_y": "149235.0"
+  },
+  {
+    "station_no": "L6880",
+    "station_name": "Beaumont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "140342.0",
+    "station_local_y": "102061.0"
+  },
+  {
+    "station_no": "8468",
+    "station_name": "BEAURAING",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "191657.0",
+    "station_local_y": "88864.0"
+  },
+  {
+    "station_no": "6526",
+    "station_name": "BELLEHEID",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "262860.0",
+    "station_local_y": "134258.0"
+  },
+  {
+    "station_no": "5572",
+    "station_name": "BERGILERS Amont",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "216964.0",
+    "station_local_y": "156990.0"
+  },
+  {
+    "station_no": "7978",
+    "station_name": "BERSILLIES-L'ABBAYE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "134309.0",
+    "station_local_y": "105579.0"
+  },
+  {
+    "station_no": "9632",
+    "station_name": "BERTRIX",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "213595.0",
+    "station_local_y": "60012.0"
+  },
+  {
+    "station_no": "102",
+    "station_name": "Berwinne et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "6946",
+    "station_name": "BEVERCE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "269012.0",
+    "station_local_y": "126873.0"
+  },
+  {
+    "station_no": "1046",
+    "station_name": "BIERGES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "166766.0",
+    "station_local_y": "155585.0"
+  },
+  {
+    "station_no": "L7180",
+    "station_name": "Biesme-sous-Thuin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "145563.0",
+    "station_local_y": "112098.0"
+  },
+  {
+    "station_no": "2735",
+    "station_name": "BILHEE Bar-Ecl",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "108324.0",
+    "station_local_y": "148176.0"
+  },
+  {
+    "station_no": "L6560",
+    "station_name": "Bistain",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "257151.0",
+    "station_local_y": "94435.0"
+  },
+  {
+    "station_no": "L7520",
+    "station_name": "Blanmont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "169285.0",
+    "station_local_y": "145098.0"
+  },
+  {
+    "station_no": "3649",
+    "station_name": "BLAREGNIES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "116873.0",
+    "station_local_y": "116410.0"
+  },
+  {
+    "station_no": "3741",
+    "station_name": "BLATON",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "99739.0",
+    "station_local_y": "131354.0"
+  },
+  {
+    "station_no": "109",
+    "station_name": "Bocq et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L6721",
+    "station_name": "Bougnies",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "119529.655",
+    "station_local_y": "119480.406"
+  },
+  {
+    "station_no": "9469",
+    "station_name": "BOUILLON",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "200495.0",
+    "station_local_y": "53078.0"
+  },
+  {
+    "station_no": "9461",
+    "station_name": "BOUILLON",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "200040.0",
+    "station_local_y": "53670.0"
+  },
+  {
+    "station_no": "3561",
+    "station_name": "BOUSSOIT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "129967.0",
+    "station_local_y": "127873.0"
+  },
+  {
+    "station_no": "9137",
+    "station_name": "BOUSSU-EN-FAGNE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "157131.0",
+    "station_local_y": "86527.0"
+  },
+  {
+    "station_no": "7843",
+    "station_name": "BOUSSU-LEZ-WALCOURT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "150205.0",
+    "station_local_y": "100412.0"
+  },
+  {
+    "station_no": "1081",
+    "station_name": "BOUSVAL",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "159661.0",
+    "station_local_y": "144723.0"
+  },
+  {
+    "station_no": "990",
+    "station_name": "Brabant Wallon",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L7840",
+    "station_name": "Braine l'Alleud",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "149371.0",
+    "station_local_y": "154110.0"
+  },
+  {
+    "station_no": "L7020",
+    "station_name": "Braine-le-Ch\u00e2teau",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "141338.0",
+    "station_local_y": "152179.0"
+  },
+  {
+    "station_no": "7250",
+    "station_name": "BRAIVES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "202916.96",
+    "station_local_y": "145864.173"
+  },
+  {
+    "station_no": "L6550",
+    "station_name": "Brizy",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "255562.0",
+    "station_local_y": "94042.0"
+  },
+  {
+    "station_no": "L5690",
+    "station_name": "Brugelette",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "113968.0",
+    "station_local_y": "142725.0"
+  },
+  {
+    "station_no": "9232",
+    "station_name": "BRULY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "160532.0",
+    "station_local_y": "76315.0"
+  },
+  {
+    "station_no": "6981",
+    "station_name": "BULLINGEN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "284647.0",
+    "station_local_y": "123811.0"
+  },
+  {
+    "station_no": "105",
+    "station_name": "Burnot et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "6967",
+    "station_name": "BUTGENBACH",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "280721.0",
+    "station_local_y": "126523.0"
+  },
+  {
+    "station_no": "L8120",
+    "station_name": "Celles",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "85630.0",
+    "station_local_y": "156257.0"
+  },
+  {
+    "station_no": "7891",
+    "station_name": "CERFONTAINE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "152859.0",
+    "station_local_y": "96020.0"
+  },
+  {
+    "station_no": "L5880",
+    "station_name": "Chantemelle",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "242422.0",
+    "station_local_y": "39046.0"
+  },
+  {
+    "station_no": "5896",
+    "station_name": "CHANXHE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "236716.0",
+    "station_local_y": "132378.0"
+  },
+  {
+    "station_no": "L7580",
+    "station_name": "Chapelle-\u00e0-Wattines",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "99397.0",
+    "station_local_y": "144511.0"
+  },
+  {
+    "station_no": "7369",
+    "station_name": "CHATELET",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "161571.0",
+    "station_local_y": "121919.0"
+  },
+  {
+    "station_no": "7371",
+    "station_name": "CHATELET",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "160715.0",
+    "station_local_y": "121850.0"
+  },
+  {
+    "station_no": "6228",
+    "station_name": "CHAUDFONTAINE Pisc",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "240980.0",
+    "station_local_y": "142873.0"
+  },
+  {
+    "station_no": "6229",
+    "station_name": "CHAUDFONTAINE Pont",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "240956.0",
+    "station_local_y": "142754.0"
+  },
+  {
+    "station_no": "L8730",
+    "station_name": "Chevetogne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "206162.0",
+    "station_local_y": "102124.0"
+  },
+  {
+    "station_no": "6804",
+    "station_name": "CHEVRON Pont",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "248729.057",
+    "station_local_y": "121539.428"
+  },
+  {
+    "station_no": "20",
+    "station_name": "Chiers et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "2993",
+    "station_name": "CHIEVRES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "106788.27",
+    "station_local_y": "137491.592"
+  },
+  {
+    "station_no": "9541",
+    "station_name": "CHINY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "220742.0",
+    "station_local_y": "48650.0"
+  },
+  {
+    "station_no": "8702",
+    "station_name": "CHOOZ",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "181326.0",
+    "station_local_y": "86860.0"
+  },
+  {
+    "station_no": "L7630",
+    "station_name": "Ciney",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "201600.0",
+    "station_local_y": "109013.0"
+  },
+  {
+    "station_no": "8157",
+    "station_name": "CINEY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "203058.0",
+    "station_local_y": "109199.0"
+  },
+  {
+    "station_no": "2341",
+    "station_name": "CLABECQ",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "140425.0",
+    "station_local_y": "152229.0"
+  },
+  {
+    "station_no": "L8910",
+    "station_name": "Clermont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "146152.0",
+    "station_local_y": "105216.0"
+  },
+  {
+    "station_no": "5904",
+    "station_name": "COMBLAIN-AU-PONT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "236166.0",
+    "station_local_y": "131269.0"
+  },
+  {
+    "station_no": "3886",
+    "station_name": "COMINES Amont B-Ecl",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "52382.0",
+    "station_local_y": "161819.0"
+  },
+  {
+    "station_no": "3884",
+    "station_name": "COMINES Aval Bar-Ecl",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "53125.0",
+    "station_local_y": "162231.0"
+  },
+  {
+    "station_no": "3885",
+    "station_name": "COMINES Barrage-Ecl",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "52821.0",
+    "station_local_y": "162069.0"
+  },
+  {
+    "station_no": "6712",
+    "station_name": "COO INF.",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "257075.0",
+    "station_local_y": "120991.0"
+  },
+  {
+    "station_no": "6718",
+    "station_name": "COO SUP.",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "255062.0",
+    "station_local_y": "120107.0"
+  },
+  {
+    "station_no": "L9190",
+    "station_name": "Court-Saint-Etienne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "164657.0",
+    "station_local_y": "148055.0"
+  },
+  {
+    "station_no": "L6350",
+    "station_name": "Couvin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "159093.0",
+    "station_local_y": "80263.0"
+  },
+  {
+    "station_no": "9071",
+    "station_name": "COUVIN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "159381.0",
+    "station_local_y": "81078.0"
+  },
+  {
+    "station_no": "9201",
+    "station_name": "COUVIN Ry de Rome",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "159558.0",
+    "station_local_y": "80700.0"
+  },
+  {
+    "station_no": "8687",
+    "station_name": "CROIX-SCAILLE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "184311.0",
+    "station_local_y": "71512.0"
+  },
+  {
+    "station_no": "8138",
+    "station_name": "CRUPET",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "192267.0",
+    "station_local_y": "116179.0"
+  },
+  {
+    "station_no": "L8720",
+    "station_name": "Crupet",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "191522.0",
+    "station_local_y": "115284.0"
+  },
+  {
+    "station_no": "3642",
+    "station_name": "CUESMES",
+    "site_name": "IDEA",
+    "station_local_x": "118222.609",
+    "station_local_y": "126029.476"
+  },
+  {
+    "station_no": "9288",
+    "station_name": "CUL-DES-SARTS",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "157680.0",
+    "station_local_y": "70939.0"
+  },
+  {
+    "station_no": "L6390",
+    "station_name": "Dalhem",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "245623.0",
+    "station_local_y": "157426.0"
+  },
+  {
+    "station_no": "L6770",
+    "station_name": "Dalhem",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "245581.0",
+    "station_local_y": "156748.0"
+  },
+  {
+    "station_no": "L7660",
+    "station_name": "Dampicourt",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "231479.0",
+    "station_local_y": "28512.0"
+  },
+  {
+    "station_no": "8341",
+    "station_name": "DAVERDISSE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "204412.0",
+    "station_local_y": "81300.0"
+  },
+  {
+    "station_no": "L6840",
+    "station_name": "Daverdisse",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "203558.0",
+    "station_local_y": "79880.0"
+  },
+  {
+    "station_no": "8348",
+    "station_name": "DAVERDISSE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "203632.0",
+    "station_local_y": "78744.0"
+  },
+  {
+    "station_no": "3",
+    "station_name": "Dendre et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "2459",
+    "station_name": "DERGNEAU",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "94190.0",
+    "station_local_y": "156345.0"
+  },
+  {
+    "station_no": "8059",
+    "station_name": "DINANT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "188952.0",
+    "station_local_y": "104948.0"
+  },
+  {
+    "station_no": "L8470",
+    "station_name": "Dinant",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "188680.0",
+    "station_local_y": "106592.0"
+  },
+  {
+    "station_no": "6353",
+    "station_name": "DOLHAIN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "261562.768",
+    "station_local_y": "145782.416"
+  },
+  {
+    "station_no": "L8900",
+    "station_name": "Donstiennes",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "146098.0",
+    "station_local_y": "107311.0"
+  },
+  {
+    "station_no": "L7650",
+    "station_name": "Dottignies",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "74978.0",
+    "station_local_y": "159040.0"
+  },
+  {
+    "station_no": "5953",
+    "station_name": "DURBUY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "227337.0",
+    "station_local_y": "116315.0"
+  },
+  {
+    "station_no": "6",
+    "station_name": "Dyle et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "22",
+    "station_name": "Eau Blanche et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "10",
+    "station_name": "Eau d'heure et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "23",
+    "station_name": "Eau Noire et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L6340",
+    "station_name": "Eben-Emael",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "241312.0",
+    "station_local_y": "164275.0"
+  },
+  {
+    "station_no": "L7550",
+    "station_name": "Ecaussinnes",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "135758.0",
+    "station_local_y": "138879.0"
+  },
+  {
+    "station_no": "2892",
+    "station_name": "ENGHIEN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "124958.0",
+    "station_local_y": "153851.0"
+  },
+  {
+    "station_no": "L7940",
+    "station_name": "Eppe-Sauvage",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "136387.0",
+    "station_local_y": "89659.0"
+  },
+  {
+    "station_no": "L6360",
+    "station_name": "Eprave",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "206847.0",
+    "station_local_y": "92332.0"
+  },
+  {
+    "station_no": "L7880",
+    "station_name": "Ere",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "79114.0",
+    "station_local_y": "141573.0"
+  },
+  {
+    "station_no": "7048",
+    "station_name": "EREZEE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "236667.0",
+    "station_local_y": "109356.0"
+  },
+  {
+    "station_no": "L6690",
+    "station_name": "Erez\u00e9e",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "233605.0",
+    "station_local_y": "110274.0"
+  },
+  {
+    "station_no": "L6920",
+    "station_name": "Escanaffles",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "85287.0",
+    "station_local_y": "158686.0"
+  },
+  {
+    "station_no": "1",
+    "station_name": "Escaut",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L6450",
+    "station_name": "Estaimpuis",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "73118.0",
+    "station_local_y": "154620.0"
+  },
+  {
+    "station_no": "L7080",
+    "station_name": "Estinnes-au-Val",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "131474.0",
+    "station_local_y": "122425.0"
+  },
+  {
+    "station_no": "L6180",
+    "station_name": "Etalle",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "238860.0",
+    "station_local_y": "41190.0"
+  },
+  {
+    "station_no": "6387",
+    "station_name": "EUPEN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "268078.442",
+    "station_local_y": "147118.802"
+  },
+  {
+    "station_no": "640401",
+    "station_name": "EUPEN AVAL RESTITUTION",
+    "site_name": "EUPEN",
+    "station_local_x": "271553.2457",
+    "station_local_y": "146884.818"
+  },
+  {
+    "station_no": "6392",
+    "station_name": "EUPEN Bellmerin",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "269034.0",
+    "station_local_y": "146854.0"
+  },
+  {
+    "station_no": "640C01",
+    "station_name": "EUPEN CENTRALE",
+    "site_name": "EUPEN",
+    "station_local_x": "271739.0",
+    "station_local_y": "146743.0"
+  },
+  {
+    "station_no": "6438",
+    "station_name": "EUPEN H\u00fctte",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "269017.13",
+    "station_local_y": "145651.041"
+  },
+  {
+    "station_no": "640601",
+    "station_name": "EUPEN LAC 1",
+    "site_name": "EUPEN",
+    "station_local_x": "271915.68",
+    "station_local_y": "146823.78"
+  },
+  {
+    "station_no": "L6930",
+    "station_name": "Falisolle",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "168252.0",
+    "station_local_y": "123734.0"
+  },
+  {
+    "station_no": "8661",
+    "station_name": "FELENNE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "184069.0",
+    "station_local_y": "81398.0"
+  },
+  {
+    "station_no": "2494",
+    "station_name": "FELUY",
+    "site_name": "IDEA",
+    "station_local_x": "141915.519",
+    "station_local_y": "139746.271"
+  },
+  {
+    "station_no": "L7590",
+    "station_name": "Flobecq",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "106271.0",
+    "station_local_y": "158865.0"
+  },
+  {
+    "station_no": "8189",
+    "station_name": "FLORENNES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "168403.0",
+    "station_local_y": "104314.0"
+  },
+  {
+    "station_no": "7326",
+    "station_name": "FLORIFFOUX Am B-Ecl",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "178882.0",
+    "station_local_y": "126368.0"
+  },
+  {
+    "station_no": "L6160",
+    "station_name": "Florival",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "169640.0",
+    "station_local_y": "161051.0"
+  },
+  {
+    "station_no": "7466",
+    "station_name": "FONT-VALMONT Am B-E",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "139920.0",
+    "station_local_y": "112169.0"
+  },
+  {
+    "station_no": "L7600",
+    "station_name": "Foret",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "242555.0",
+    "station_local_y": "142596.0"
+  },
+  {
+    "station_no": "L6310",
+    "station_name": "Forri\u00e8res",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "215043.0",
+    "station_local_y": "91610.0"
+  },
+  {
+    "station_no": "8181",
+    "station_name": "FOY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "182079.0",
+    "station_local_y": "109098.0"
+  },
+  {
+    "station_no": "9574",
+    "station_name": "FRATIN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "236753.0",
+    "station_local_y": "40225.0"
+  },
+  {
+    "station_no": "L7890",
+    "station_name": "Froidmont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "76541.0",
+    "station_local_y": "141079.0"
+  },
+  {
+    "station_no": "8677",
+    "station_name": "GEDINNE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "193760.0",
+    "station_local_y": "74312.0"
+  },
+  {
+    "station_no": "L6400",
+    "station_name": "Gedinne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "190600.0",
+    "station_local_y": "74600.0"
+  },
+  {
+    "station_no": "37",
+    "station_name": "Geer et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L9220",
+    "station_name": "Gembloux",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "172124.0",
+    "station_local_y": "138209.0"
+  },
+  {
+    "station_no": "5284",
+    "station_name": "GEMMENICH",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "263361.0",
+    "station_local_y": "161066.0"
+  },
+  {
+    "station_no": "8221",
+    "station_name": "GENDRON",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "192403.0",
+    "station_local_y": "100195.0"
+  },
+  {
+    "station_no": "7678",
+    "station_name": "GERPINNES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "161521.0",
+    "station_local_y": "112953.0"
+  },
+  {
+    "station_no": "L7920",
+    "station_name": "Gerpinnes (Hanzinne  aval)",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "161407.0",
+    "station_local_y": "114107.0"
+  },
+  {
+    "station_no": "L7910",
+    "station_name": "Gerpinnes (Hanzinne amont)",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "161662.0",
+    "station_local_y": "112607.0"
+  },
+  {
+    "station_no": "L7930",
+    "station_name": "Gerpinnes (St-Pierre)",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "161266.0",
+    "station_local_y": "113816.0"
+  },
+  {
+    "station_no": "L8630",
+    "station_name": "Gesves",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "197485.0",
+    "station_local_y": "121147.0"
+  },
+  {
+    "station_no": "7",
+    "station_name": "Gette et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "648601",
+    "station_name": "GETZBACH ENTREE SEUIL AMONT",
+    "site_name": "EUPEN",
+    "station_local_x": "272935.2837",
+    "station_local_y": "145580.479"
+  },
+  {
+    "station_no": "L6570",
+    "station_name": "Ghoy",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "110975.0",
+    "station_local_y": "156700.0"
+  },
+  {
+    "station_no": "656601",
+    "station_name": "GILEPPE LAC 1",
+    "site_name": "GILEPPE",
+    "station_local_x": "263747.9775",
+    "station_local_y": "143253.2598"
+  },
+  {
+    "station_no": "L6710",
+    "station_name": "Givry",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "126144.0",
+    "station_local_y": "118021.0"
+  },
+  {
+    "station_no": "2536",
+    "station_name": "GOUY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "145724.0",
+    "station_local_y": "131156.0"
+  },
+  {
+    "station_no": "L8650",
+    "station_name": "Gozin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "194984.0",
+    "station_local_y": "90490.0"
+  },
+  {
+    "station_no": "L5540",
+    "station_name": "Graide",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "199752.0",
+    "station_local_y": "70397.0"
+  },
+  {
+    "station_no": "L7210",
+    "station_name": "Grandrieu",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "136257.0",
+    "station_local_y": "97061.0"
+  },
+  {
+    "station_no": "L6040",
+    "station_name": "Grandville",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "218889.0",
+    "station_local_y": "156963.0"
+  },
+  {
+    "station_no": "7197",
+    "station_name": "GRD-MALADES Bief Am",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "187408.0",
+    "station_local_y": "128661.0"
+  },
+  {
+    "station_no": "L6320",
+    "station_name": "Grupont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "215042.0",
+    "station_local_y": "87185.0"
+  },
+  {
+    "station_no": "103",
+    "station_name": "Gueule et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L7260",
+    "station_name": "Gussignies",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "104942.0",
+    "station_local_y": "114062.0"
+  },
+  {
+    "station_no": "L5970",
+    "station_name": "Habay-la-Vieille",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "240091.0",
+    "station_local_y": "46759.0"
+  },
+  {
+    "station_no": "5771",
+    "station_name": "HACCOURT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "242270.0",
+    "station_local_y": "159116.0"
+  },
+  {
+    "station_no": "991",
+    "station_name": "Hainaut",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "4",
+    "station_name": "Haine et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L5630",
+    "station_name": "Hamoir",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "231494.0",
+    "station_local_y": "124110.0"
+  },
+  {
+    "station_no": "5922",
+    "station_name": "HAMOIR",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "232949.0",
+    "station_local_y": "124541.0"
+  },
+  {
+    "station_no": "L7690",
+    "station_name": "Han-sur-Lesse",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "207798.0",
+    "station_local_y": "90682.0"
+  },
+  {
+    "station_no": "L8930",
+    "station_name": "Han-sur-Lesse",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "208047.0",
+    "station_local_y": "91195.0"
+  },
+  {
+    "station_no": "L8490",
+    "station_name": "Hanret",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "191086.0",
+    "station_local_y": "142014.0"
+  },
+  {
+    "station_no": "L6940",
+    "station_name": "Hargimont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "216975.0",
+    "station_local_y": "97640.0"
+  },
+  {
+    "station_no": "L7640",
+    "station_name": "Hargimont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "216681.0",
+    "station_local_y": "97266.0"
+  },
+  {
+    "station_no": "L6430",
+    "station_name": "Harmignies",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "124807.0",
+    "station_local_y": "120910.0"
+  },
+  {
+    "station_no": "L5520",
+    "station_name": "Harnoncourt",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "231435.0",
+    "station_local_y": "25671.0"
+  },
+  {
+    "station_no": "8622",
+    "station_name": "HASTIERE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "180660.0",
+    "station_local_y": "98975.0"
+  },
+  {
+    "station_no": "26",
+    "station_name": "Haute Lesse et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "29",
+    "station_name": "Haute Meuse amont",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "50",
+    "station_name": "Haute Meuse aval",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "8",
+    "station_name": "Haute Sambre",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "18",
+    "station_name": "Haute Semois et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "1584",
+    "station_name": "HELECINE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "193052.0",
+    "station_local_y": "159898.0"
+  },
+  {
+    "station_no": "643401",
+    "station_name": "HELLE SEUIL SORTIE TUNNEL",
+    "site_name": "EUPEN",
+    "station_local_x": "272940.0462",
+    "station_local_y": "145482.583"
+  },
+  {
+    "station_no": "L6671",
+    "station_name": "Hemptinne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "194044.0",
+    "station_local_y": "143723.0"
+  },
+  {
+    "station_no": "L7300",
+    "station_name": "Herbeumont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "212504.0",
+    "station_local_y": "51213.0"
+  },
+  {
+    "station_no": "107",
+    "station_name": "Hermeton et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L5861",
+    "station_name": "Hoegne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "251856.0",
+    "station_local_y": "139184.0"
+  },
+  {
+    "station_no": "5962",
+    "station_name": "HOTTON",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "226294.0",
+    "station_local_y": "107205.0"
+  },
+  {
+    "station_no": "L5930",
+    "station_name": "Houffalize",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "251735.0",
+    "station_local_y": "91991.0"
+  },
+  {
+    "station_no": "110",
+    "station_name": "Houille et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "8231",
+    "station_name": "HOUYET",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "195619.0",
+    "station_local_y": "97864.0"
+  },
+  {
+    "station_no": "104",
+    "station_name": "Houyoux et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "35",
+    "station_name": "Hoyoux et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "7244",
+    "station_name": "HUCCORGNE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "206601.0",
+    "station_local_y": "139948.0"
+  },
+  {
+    "station_no": "7141",
+    "station_name": "HUY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "211378.0",
+    "station_local_y": "134318.0"
+  },
+  {
+    "station_no": "3643",
+    "station_name": "HYON",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "121278.0",
+    "station_local_y": "125841.0"
+  },
+  {
+    "station_no": "L6610",
+    "station_name": "H\u00e9rock",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "198431.0",
+    "station_local_y": "96041.0"
+  },
+  {
+    "station_no": "L8031",
+    "station_name": "Incourt",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "181920.0",
+    "station_local_y": "154020.0"
+  },
+  {
+    "station_no": "2952",
+    "station_name": "IRCHONWELZ",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "106331.0",
+    "station_local_y": "145541.0"
+  },
+  {
+    "station_no": "L5420",
+    "station_name": "Isi\u00e8res",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "111467.0",
+    "station_local_y": "150313.0"
+  },
+  {
+    "station_no": "7117",
+    "station_name": "IVOZ-RAMET Bief Am",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "226214.0",
+    "station_local_y": "142572.0"
+  },
+  {
+    "station_no": "6550",
+    "station_name": "JALHAY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "266002.0",
+    "station_local_y": "138638.0"
+  },
+  {
+    "station_no": "7711",
+    "station_name": "JAMIOULX",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "152541.0",
+    "station_local_y": "116384.0"
+  },
+  {
+    "station_no": "8527",
+    "station_name": "JEMELLE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "213816.0",
+    "station_local_y": "94208.0"
+  },
+  {
+    "station_no": "L7241",
+    "station_name": "Jemeppe-sur-Sambre",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "171681.0",
+    "station_local_y": "128177.0"
+  },
+  {
+    "station_no": "L7850",
+    "station_name": "Jodoigne-Souveraine",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "183592.0",
+    "station_local_y": "155259.0"
+  },
+  {
+    "station_no": "2999",
+    "station_name": "JURBISE",
+    "site_name": "IDEA",
+    "station_local_x": "116971.224",
+    "station_local_y": "135620.852"
+  },
+  {
+    "station_no": "L5491",
+    "station_name": "Juzaine",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "232993.0",
+    "station_local_y": "118698.0"
+  },
+  {
+    "station_no": "3277",
+    "station_name": "KAIN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "79541.0",
+    "station_local_y": "146851.0"
+  },
+  {
+    "station_no": "3276",
+    "station_name": "KAIN Amont Bar-Ecl",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "79602.0",
+    "station_local_y": "146571.0"
+  },
+  {
+    "station_no": "3274",
+    "station_name": "KAIN Aval Bar-Ecluse",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "79390.0",
+    "station_local_y": "146943.0"
+  },
+  {
+    "station_no": "5291",
+    "station_name": "KELMIS (LA CALAMINE)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "265341.0",
+    "station_local_y": "156616.0"
+  },
+  {
+    "station_no": "L9010",
+    "station_name": "La Bruy\u00e8re",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "182992.0",
+    "station_local_y": "135898.0"
+  },
+  {
+    "station_no": "7474",
+    "station_name": "LA BUISSIERE Av B-E",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "137642.0",
+    "station_local_y": "111503.0"
+  },
+  {
+    "station_no": "L7670",
+    "station_name": "La Gleize",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "255524.0",
+    "station_local_y": "122167.0"
+  },
+  {
+    "station_no": "L8000",
+    "station_name": "La Hulpe",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "159688.0",
+    "station_local_y": "157883.0"
+  },
+  {
+    "station_no": "9531",
+    "station_name": "LACUISINE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "219066.0",
+    "station_local_y": "44528.0"
+  },
+  {
+    "station_no": "5757",
+    "station_name": "LANAYE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "243049.0",
+    "station_local_y": "165669.0"
+  },
+  {
+    "station_no": "7406",
+    "station_name": "LANDELIES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "149226.0",
+    "station_local_y": "118628.0"
+  },
+  {
+    "station_no": "7408",
+    "station_name": "LANDELIES US",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "148307.554",
+    "station_local_y": "118272.465"
+  },
+  {
+    "station_no": "7168",
+    "station_name": "LANDENNE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "198624.0",
+    "station_local_y": "134392.0"
+  },
+  {
+    "station_no": "6753",
+    "station_name": "LASNENVILLE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "266668.0",
+    "station_local_y": "120042.0"
+  },
+  {
+    "station_no": "L6030",
+    "station_name": "Latour",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "235528.0",
+    "station_local_y": "27785.0"
+  },
+  {
+    "station_no": "L6270",
+    "station_name": "Lavaux-Sainte-Anne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "202284.0",
+    "station_local_y": "90218.0"
+  },
+  {
+    "station_no": "L6590",
+    "station_name": "Lens",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "116909.0",
+    "station_local_y": "138443.0"
+  },
+  {
+    "station_no": "2707",
+    "station_name": "LESSINES Bief Amont",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "112294.0",
+    "station_local_y": "155703.0"
+  },
+  {
+    "station_no": "2708",
+    "station_name": "LESSINES US",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "112340.0",
+    "station_local_y": "155075.0"
+  },
+  {
+    "station_no": "27",
+    "station_name": "Lhomme et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "8388",
+    "station_name": "LIBIN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "213702.0",
+    "station_local_y": "74481.0"
+  },
+  {
+    "station_no": "7102",
+    "station_name": "LIEGE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "235533.0",
+    "station_local_y": "145362.0"
+  },
+  {
+    "station_no": "5491",
+    "station_name": "LIEGE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "235642.0",
+    "station_local_y": "146568.0"
+  },
+  {
+    "station_no": "7629",
+    "station_name": "LIGNY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "163707.0",
+    "station_local_y": "133164.0"
+  },
+  {
+    "station_no": "2348",
+    "station_name": "LILLOIS",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "152880.0",
+    "station_local_y": "149392.0"
+  },
+  {
+    "station_no": "L6140",
+    "station_name": "Limelette",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "164640.0",
+    "station_local_y": "152777.0"
+  },
+  {
+    "station_no": "L7500",
+    "station_name": "Limont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "216892.0",
+    "station_local_y": "150178.0"
+  },
+  {
+    "station_no": "5436",
+    "station_name": "LIXHE Aval",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "242573.0",
+    "station_local_y": "161861.0"
+  },
+  {
+    "station_no": "5447",
+    "station_name": "LIXHE Bief Amont",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "243197.0",
+    "station_local_y": "160314.0"
+  },
+  {
+    "station_no": "992",
+    "station_name": "Li\u00e8ge",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L6090",
+    "station_name": "Lommersweiler",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "277350.0",
+    "station_local_y": "104134.0"
+  },
+  {
+    "station_no": "L6240",
+    "station_name": "Lorc\u00e9",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "249530.0",
+    "station_local_y": "123011.0"
+  },
+  {
+    "station_no": "1057",
+    "station_name": "LOUVAIN LA NEUVE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "169320.0",
+    "station_local_y": "150960.0"
+  },
+  {
+    "station_no": "6657",
+    "station_name": "LOUVEIGNE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "244774.25",
+    "station_local_y": "135357.274"
+  },
+  {
+    "station_no": "8022",
+    "station_name": "LUSTIN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "185873.0",
+    "station_local_y": "117480.0"
+  },
+  {
+    "station_no": "993",
+    "station_name": "Luxembourg",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "0",
+    "station_name": "Lys et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "6021",
+    "station_name": "MABOMPRE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "246721.0",
+    "station_local_y": "92538.0"
+  },
+  {
+    "station_no": "L7200",
+    "station_name": "Macquenoise",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "135948.0",
+    "station_local_y": "74007.0"
+  },
+  {
+    "station_no": "L6950",
+    "station_name": "Maffle",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "110386.0",
+    "station_local_y": "144072.0"
+  },
+  {
+    "station_no": "L7680",
+    "station_name": "Maissin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "208491.0",
+    "station_local_y": "74327.0"
+  },
+  {
+    "station_no": "L6520",
+    "station_name": "Malmedy",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "267464.0",
+    "station_local_y": "125193.0"
+  },
+  {
+    "station_no": "6933",
+    "station_name": "MALMEDY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "267447.0",
+    "station_local_y": "125199.0"
+  },
+  {
+    "station_no": "6991",
+    "station_name": "MALMEDY  Warchenne",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "268278.0",
+    "station_local_y": "124997.0"
+  },
+  {
+    "station_no": "L5500",
+    "station_name": "Marbehan",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "234016.0",
+    "station_local_y": "46840.0"
+  },
+  {
+    "station_no": "7087",
+    "station_name": "MARCHE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "219630.0",
+    "station_local_y": "104736.0"
+  },
+  {
+    "station_no": "L7120",
+    "station_name": "Marche-en-Famenne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "219736.0",
+    "station_local_y": "106657.0"
+  },
+  {
+    "station_no": "L8700",
+    "station_name": "Marche-les-Dames",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "191639.0",
+    "station_local_y": "131426.0"
+  },
+  {
+    "station_no": "L5990",
+    "station_name": "Marchin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "212846.0",
+    "station_local_y": "131678.0"
+  },
+  {
+    "station_no": "L7870",
+    "station_name": "Marchin (bis)",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "211748.0",
+    "station_local_y": "132797.0"
+  },
+  {
+    "station_no": "L6870",
+    "station_name": "Marchipont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "99954.0",
+    "station_local_y": "118836.0"
+  },
+  {
+    "station_no": "5796",
+    "station_name": "MAREXHE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "238647.0",
+    "station_local_y": "150149.0"
+  },
+  {
+    "station_no": "9111",
+    "station_name": "MARIEMBOURG",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "161419.0",
+    "station_local_y": "87044.0"
+  },
+  {
+    "station_no": "L6461",
+    "station_name": "Marneffe",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "205042.0",
+    "station_local_y": "140746.0"
+  },
+  {
+    "station_no": "L5610",
+    "station_name": "Martelange",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "248595.0",
+    "station_local_y": "58934.0"
+  },
+  {
+    "station_no": "9960",
+    "station_name": "MARTELANGE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "247830.732",
+    "station_local_y": "61236.004"
+  },
+  {
+    "station_no": "L6980",
+    "station_name": "Martilly",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "221713.0",
+    "station_local_y": "55650.0"
+  },
+  {
+    "station_no": "L7130",
+    "station_name": "Martilly",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "221540.0",
+    "station_local_y": "55377.0"
+  },
+  {
+    "station_no": "6621",
+    "station_name": "MARTINRIVE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "240021.0",
+    "station_local_y": "130556.0"
+  },
+  {
+    "station_no": "3707",
+    "station_name": "MAUBRAY (PERONNES Ecluse 1)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "86437.0",
+    "station_local_y": "136683.0"
+  },
+  {
+    "station_no": "7018",
+    "station_name": "MEAN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "219322.0",
+    "station_local_y": "117014.0"
+  },
+  {
+    "station_no": "L8100",
+    "station_name": "Meeffe",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "196266.0",
+    "station_local_y": "143493.0"
+  },
+  {
+    "station_no": "36",
+    "station_name": "Mehaigne et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "9588",
+    "station_name": "MEIX-LE-TIGE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "247613.0",
+    "station_local_y": "35338.0"
+  },
+  {
+    "station_no": "9435",
+    "station_name": "MEMBRE Amont",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "188812.0",
+    "station_local_y": "62815.0"
+  },
+  {
+    "station_no": "9434",
+    "station_name": "MEMBRE Pont",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "188341.0",
+    "station_local_y": "61505.0"
+  },
+  {
+    "station_no": "5857",
+    "station_name": "MERY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "236419.0",
+    "station_local_y": "138182.0"
+  },
+  {
+    "station_no": "L5703",
+    "station_name": "Mesvin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "120908.0",
+    "station_local_y": "124476.0"
+  },
+  {
+    "station_no": "33",
+    "station_name": "Meuse moyenne",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L7860",
+    "station_name": "Modave",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "213736.0",
+    "station_local_y": "129153.0"
+  },
+  {
+    "station_no": "7228",
+    "station_name": "MODAVE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "215114.0",
+    "station_local_y": "126736.0"
+  },
+  {
+    "station_no": "7242",
+    "station_name": "MOHA",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "207779.0",
+    "station_local_y": "138112.0"
+  },
+  {
+    "station_no": "106",
+    "station_name": "Molign\u00e9e et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "7577",
+    "station_name": "MOMIGNIES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "135767.0",
+    "station_local_y": "80410.0"
+  },
+  {
+    "station_no": "7394",
+    "station_name": "MONCEAU Aval Bar-Ecl",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "150824.0",
+    "station_local_y": "120482.0"
+  },
+  {
+    "station_no": "7395",
+    "station_name": "MONCEAU Bar-Ecluse",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "150791.0",
+    "station_local_y": "120228.0"
+  },
+  {
+    "station_no": "6529",
+    "station_name": "MONT-RIGI",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "270892.03",
+    "station_local_y": "134717.026"
+  },
+  {
+    "station_no": "L9170",
+    "station_name": "Mont-Saint-Guibert",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "167811.0",
+    "station_local_y": "146893.0"
+  },
+  {
+    "station_no": "L7280",
+    "station_name": "Monteneau",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "274687.0",
+    "station_local_y": "117920.0"
+  },
+  {
+    "station_no": "7335",
+    "station_name": "MORNIMONT Bar-Ecluse",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "174057.0",
+    "station_local_y": "125915.0"
+  },
+  {
+    "station_no": "3476",
+    "station_name": "MOUSCRON",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "71492.0",
+    "station_local_y": "160114.0"
+  },
+  {
+    "station_no": "L7950",
+    "station_name": "Moustier-en-Fagne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "137500.0",
+    "station_local_y": "87405.0"
+  },
+  {
+    "station_no": "14",
+    "station_name": "Moyenne Semois et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "9698",
+    "station_name": "NAMOUSSART",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "232010.0",
+    "station_local_y": "59004.0"
+  },
+  {
+    "station_no": "8001",
+    "station_name": "NAMUR",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "185587.0",
+    "station_local_y": "127947.0"
+  },
+  {
+    "station_no": "994",
+    "station_name": "Namur",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "8538",
+    "station_name": "NASSOGNE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "219988.0",
+    "station_local_y": "91995.0"
+  },
+  {
+    "station_no": "L8220",
+    "station_name": "Natoye",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "199601.0",
+    "station_local_y": "114232.0"
+  },
+  {
+    "station_no": "L7220",
+    "station_name": "Nethen",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "169852.0",
+    "station_local_y": "165133.0"
+  },
+  {
+    "station_no": "7133",
+    "station_name": "NEUVILLE Bief Aval",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "216627.0",
+    "station_local_y": "136114.0"
+  },
+  {
+    "station_no": "L7750",
+    "station_name": "Nil Saint-Vincent",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "169808.0",
+    "station_local_y": "146835.0"
+  },
+  {
+    "station_no": "9081",
+    "station_name": "NISMES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "163437.0",
+    "station_local_y": "86052.0"
+  },
+  {
+    "station_no": "5991",
+    "station_name": "NISRAMONT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "243246.0",
+    "station_local_y": "92890.0"
+  },
+  {
+    "station_no": "5997",
+    "station_name": "NISRAMONT (LAC) Amt",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "242584.0",
+    "station_local_y": "93290.0"
+  },
+  {
+    "station_no": "L7760",
+    "station_name": "Nivelles",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "145481.0",
+    "station_local_y": "143171.0"
+  },
+  {
+    "station_no": "L6640",
+    "station_name": "Noirhat",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "161878.0",
+    "station_local_y": "146765.0"
+  },
+  {
+    "station_no": "L7570",
+    "station_name": "Obourg",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "124273.0",
+    "station_local_y": "128727.0"
+  },
+  {
+    "station_no": "L5530",
+    "station_name": "Ochamps",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "215429.0",
+    "station_local_y": "68645.0"
+  },
+  {
+    "station_no": "52",
+    "station_name": "Oise et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "2473",
+    "station_name": "OISQUERCQ",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "139606.0",
+    "station_local_y": "150704.0"
+  },
+  {
+    "station_no": "L8740",
+    "station_name": "Olloy - Noy\u00e9",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "166988.0",
+    "station_local_y": "84250.0"
+  },
+  {
+    "station_no": "L6380",
+    "station_name": "Olloy-sur-Viroin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "166439.0",
+    "station_local_y": "84824.0"
+  },
+  {
+    "station_no": "L5183",
+    "station_name": "Onoz",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "171179.0",
+    "station_local_y": "130329.0"
+  },
+  {
+    "station_no": "L6280",
+    "station_name": "Opheylissem",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "193349.0",
+    "station_local_y": "158899.0"
+  },
+  {
+    "station_no": "L5550",
+    "station_name": "Opont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "204130.0",
+    "station_local_y": "72555.0"
+  },
+  {
+    "station_no": "L7231",
+    "station_name": "Orp-le-Grand",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "193851.0",
+    "station_local_y": "153663.0"
+  },
+  {
+    "station_no": "6122",
+    "station_name": "ORTHO",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "241396.0",
+    "station_local_y": "89185.0"
+  },
+  {
+    "station_no": "6128",
+    "station_name": "ORTHO",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "238496.0",
+    "station_local_y": "92057.0"
+  },
+  {
+    "station_no": "9816",
+    "station_name": "ORVAL",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "219807.0",
+    "station_local_y": "35765.0"
+  },
+  {
+    "station_no": "L9120",
+    "station_name": "Otrange",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "221327.0",
+    "station_local_y": "158495.0"
+  },
+  {
+    "station_no": "7016",
+    "station_name": "OUFFET",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "227130.0",
+    "station_local_y": "125891.0"
+  },
+  {
+    "station_no": "42",
+    "station_name": "Our et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L6330",
+    "station_name": "Ouren",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "276730.0",
+    "station_local_y": "93821.0"
+  },
+  {
+    "station_no": "43",
+    "station_name": "Ourthe inf\u00e9rieure et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "44",
+    "station_name": "Ourthe moyenne et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "45",
+    "station_name": "Ourthe sup\u00e9rieure et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L7310",
+    "station_name": "Papignies",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "111160.0",
+    "station_local_y": "152651.0"
+  },
+  {
+    "station_no": "2713",
+    "station_name": "PAPIGNIES Bief Aval",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "111830.0",
+    "station_local_y": "152661.0"
+  },
+  {
+    "station_no": "L6910",
+    "station_name": "Pecq",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "76698.0",
+    "station_local_y": "151998.0"
+  },
+  {
+    "station_no": "3270",
+    "station_name": "PECQ",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "77608.79",
+    "station_local_y": "153684.114"
+  },
+  {
+    "station_no": "630201",
+    "station_name": "PEPINSTER",
+    "site_name": "VESDRE AVAL",
+    "station_local_x": "251113.8848",
+    "station_local_y": "140651.0757"
+  },
+  {
+    "station_no": "3705",
+    "station_name": "PERONNES (PERONNES Ecluse 2)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "84397.0",
+    "station_local_y": "138115.0"
+  },
+  {
+    "station_no": "3717",
+    "station_name": "PERUWELZ",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "95611.0",
+    "station_local_y": "133611.0"
+  },
+  {
+    "station_no": "1579",
+    "station_name": "PERWEZ",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "182636.0",
+    "station_local_y": "146759.0"
+  },
+  {
+    "station_no": "9214",
+    "station_name": "PETIGNY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "161926.0",
+    "station_local_y": "79240.0"
+  },
+  {
+    "station_no": "9221",
+    "station_name": "PETIGNY  Ry de Rome",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "163095.0",
+    "station_local_y": "77963.0"
+  },
+  {
+    "station_no": "9216",
+    "station_name": "PETIGNY (Lac)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "161983.031",
+    "station_local_y": "79141.154"
+  },
+  {
+    "station_no": "9215",
+    "station_name": "PETIGNY Barrage",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "161961.0",
+    "station_local_y": "79173.0"
+  },
+  {
+    "station_no": "9223",
+    "station_name": "PETIGNY Ermitage",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "162454.0",
+    "station_local_y": "78028.0"
+  },
+  {
+    "station_no": "9224",
+    "station_name": "PETIGNY Fd Serpents",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "162748.0",
+    "station_local_y": "78990.0"
+  },
+  {
+    "station_no": "7865",
+    "station_name": "PLATE TAILLE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "151055.0",
+    "station_local_y": "97862.0"
+  },
+  {
+    "station_no": "3891",
+    "station_name": "PLOEGSTEERT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "46872.0",
+    "station_local_y": "154930.0"
+  },
+  {
+    "station_no": "6517",
+    "station_name": "POLLEUR",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "257072.0",
+    "station_local_y": "137313.0"
+  },
+  {
+    "station_no": "8017",
+    "station_name": "PROFONDEVILLE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "186116.0",
+    "station_local_y": "119470.0"
+  },
+  {
+    "station_no": "L6001",
+    "station_name": "Profondeville",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "185297.0",
+    "station_local_y": "116813.0"
+  },
+  {
+    "station_no": "6048",
+    "station_name": "RACHAMPS-NOVILLE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "251592.0",
+    "station_local_y": "86756.0"
+  },
+  {
+    "station_no": "L7970",
+    "station_name": "Rebecq",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "133294.0",
+    "station_local_y": "150292.0"
+  },
+  {
+    "station_no": "6651",
+    "station_name": "REMOUCHAMPS",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "245200.0",
+    "station_local_y": "130754.0"
+  },
+  {
+    "station_no": "L7070",
+    "station_name": "Rensiw\u00e9",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "246925.0",
+    "station_local_y": "92416.0"
+  },
+  {
+    "station_no": "L5021",
+    "station_name": "Resteigne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "207730.0",
+    "station_local_y": "86925.0"
+  },
+  {
+    "station_no": "9914",
+    "station_name": "REULAND",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "277320.0",
+    "station_local_y": "98989.0"
+  },
+  {
+    "station_no": "L6080",
+    "station_name": "Reuland",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "277217.0",
+    "station_local_y": "99906.0"
+  },
+  {
+    "station_no": "L5201",
+    "station_name": "Rhisnes",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "183172.0",
+    "station_local_y": "130635.0"
+  },
+  {
+    "station_no": "L8920",
+    "station_name": "Riconvert",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "145376.0",
+    "station_local_y": "105107.0"
+  },
+  {
+    "station_no": "6958",
+    "station_name": "ROBERTVILLE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "273546.0",
+    "station_local_y": "128237.0"
+  },
+  {
+    "station_no": "L6650",
+    "station_name": "Rochefort",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "211155.0",
+    "station_local_y": "94457.0"
+  },
+  {
+    "station_no": "8518",
+    "station_name": "ROCHEFORT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "210413.0",
+    "station_local_y": "95226.0"
+  },
+  {
+    "station_no": "3628",
+    "station_name": "ROISIN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "102825.0",
+    "station_local_y": "115114.0"
+  },
+  {
+    "station_no": "L5060",
+    "station_name": "Romedenne",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "174509.0",
+    "station_local_y": "94935.0"
+  },
+  {
+    "station_no": "2371",
+    "station_name": "RONQUIERES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "139811.0",
+    "station_local_y": "143926.0"
+  },
+  {
+    "station_no": "2492",
+    "station_name": "RONQUIERES Anc Canal",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "140336.0",
+    "station_local_y": "143393.0"
+  },
+  {
+    "station_no": "2483",
+    "station_name": "RONQUIERES Bief Aval",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "139798.0",
+    "station_local_y": "144161.0"
+  },
+  {
+    "station_no": "L5670",
+    "station_name": "Ronqui\u00e8res",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "139667.0",
+    "station_local_y": "144334.0"
+  },
+  {
+    "station_no": "L7530",
+    "station_name": "Rosi\u00e8res",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "163103.0",
+    "station_local_y": "158162.0"
+  },
+  {
+    "station_no": "3647",
+    "station_name": "ROUVEROY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "128368.0",
+    "station_local_y": "115715.0"
+  },
+  {
+    "station_no": "L5600",
+    "station_name": "Ruette",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "238786.0",
+    "station_local_y": "27460.0"
+  },
+  {
+    "station_no": "3778",
+    "station_name": "SAINT-DENIS",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "125253.0",
+    "station_local_y": "131161.0"
+  },
+  {
+    "station_no": "8128",
+    "station_name": "SAINT-GERARD",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "175065.0",
+    "station_local_y": "115074.0"
+  },
+  {
+    "station_no": "6168",
+    "station_name": "SAINT-HUBERT A\u00e9ro",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "224149.0",
+    "station_local_y": "81375.0"
+  },
+  {
+    "station_no": "L5570",
+    "station_name": "Saint-Martin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "169937.0",
+    "station_local_y": "132807.0"
+  },
+  {
+    "station_no": "L5720",
+    "station_name": "Saint-R\u00e9my-Geest",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "185522.0",
+    "station_local_y": "159384.0"
+  },
+  {
+    "station_no": "9571",
+    "station_name": "SAINTE-MARIE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "236226.0",
+    "station_local_y": "42165.0"
+  },
+  {
+    "station_no": "7319",
+    "station_name": "SALZINNES Ronet",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "182958.0",
+    "station_local_y": "127783.0"
+  },
+  {
+    "station_no": "108",
+    "station_name": "Samson et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "9922",
+    "station_name": "SANKT-VITH",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "275187.0",
+    "station_local_y": "109977.0"
+  },
+  {
+    "station_no": "7003",
+    "station_name": "SART-TILMAN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "235004.0",
+    "station_local_y": "142432.0"
+  },
+  {
+    "station_no": "5826",
+    "station_name": "SAUHEID",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "236544.0",
+    "station_local_y": "143595.0"
+  },
+  {
+    "station_no": "L9000",
+    "station_name": "Sauveni\u00e8re",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "175117.0",
+    "station_local_y": "141129.0"
+  },
+  {
+    "station_no": "9926",
+    "station_name": "SCHOENBERG",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "285005.0",
+    "station_local_y": "110419.0"
+  },
+  {
+    "station_no": "L8750",
+    "station_name": "Scry",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "169586.0",
+    "station_local_y": "113278.0"
+  },
+  {
+    "station_no": "L8710",
+    "station_name": "Seilles",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "201126.0",
+    "station_local_y": "132843.0"
+  },
+  {
+    "station_no": "9797",
+    "station_name": "SELANGE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "256246.0",
+    "station_local_y": "33992.0"
+  },
+  {
+    "station_no": "2388",
+    "station_name": "SENEFFE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "144000.0",
+    "station_local_y": "133202.0"
+  },
+  {
+    "station_no": "L8140",
+    "station_name": "Seneffe",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "142289.0",
+    "station_local_y": "134717.0"
+  },
+  {
+    "station_no": "5",
+    "station_name": "Senne et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "51",
+    "station_name": "Sennette et Canal Charleroi Bruxelles",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "7888",
+    "station_name": "SENZEILLES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "157040.0",
+    "station_local_y": "96780.0"
+  },
+  {
+    "station_no": "7831",
+    "station_name": "SILENRIEUX (BARRAGE)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "152096.0",
+    "station_local_y": "100666.0"
+  },
+  {
+    "station_no": "7836",
+    "station_name": "SILENRIEUX (LAC)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "151965.0",
+    "station_local_y": "100427.0"
+  },
+  {
+    "station_no": "7863",
+    "station_name": "SILENRIEUX (RY)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "154000.0",
+    "station_local_y": "99564.0"
+  },
+  {
+    "station_no": "L6660",
+    "station_name": "Sippenaeken",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "260928.0",
+    "station_local_y": "161171.0"
+  },
+  {
+    "station_no": "7967",
+    "station_name": "SIVRY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "140030.0",
+    "station_local_y": "96326.0"
+  },
+  {
+    "station_no": "1997",
+    "station_name": "SOIGNIES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "130360.0",
+    "station_local_y": "142156.0"
+  },
+  {
+    "station_no": "L8080",
+    "station_name": "Soignies",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "128645.0",
+    "station_local_y": "142380.0"
+  },
+  {
+    "station_no": "7487",
+    "station_name": "SOLRE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "133790.0",
+    "station_local_y": "110935.0"
+  },
+  {
+    "station_no": "7485",
+    "station_name": "SOLRE S/S Bar-Ecluse",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "134411.0",
+    "station_local_y": "110966.0"
+  },
+  {
+    "station_no": "8166",
+    "station_name": "SOSOYE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "179075.0",
+    "station_local_y": "109790.0"
+  },
+  {
+    "station_no": "7883",
+    "station_name": "SOUMOY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "154900.0",
+    "station_local_y": "97589.0"
+  },
+  {
+    "station_no": "6538",
+    "station_name": "SPA aerodrome",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "259386.0",
+    "station_local_y": "130894.0"
+  },
+  {
+    "station_no": "L6600",
+    "station_name": "Spiennes",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "122730.0",
+    "station_local_y": "123571.0"
+  },
+  {
+    "station_no": "L6790",
+    "station_name": "Spixhe",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "252933.0",
+    "station_local_y": "135496.0"
+  },
+  {
+    "station_no": "L7470",
+    "station_name": "Spontin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "196715.0",
+    "station_local_y": "112080.0"
+  },
+  {
+    "station_no": "L6850",
+    "station_name": "Sprimont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "234449.0",
+    "station_local_y": "81279.0"
+  },
+  {
+    "station_no": "6732",
+    "station_name": "STAVELOT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "257829.0",
+    "station_local_y": "119662.0"
+  },
+  {
+    "station_no": "L6510",
+    "station_name": "Stavelot",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "257828.0",
+    "station_local_y": "119661.0"
+  },
+  {
+    "station_no": "L7161",
+    "station_name": "Stavelot",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "262220.0",
+    "station_local_y": "121682.0"
+  },
+  {
+    "station_no": "L5660",
+    "station_name": "Steenkerque",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "128947.0",
+    "station_local_y": "147983.0"
+  },
+  {
+    "station_no": "L5661",
+    "station_name": "Steenkerque",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "128684.0",
+    "station_local_y": "147787.0"
+  },
+  {
+    "station_no": "9915",
+    "station_name": "STEFFESHAUSEN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "277738.0",
+    "station_local_y": "100008.0"
+  },
+  {
+    "station_no": "9651",
+    "station_name": "STRAIMONT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "222913.0",
+    "station_local_y": "53997.0"
+  },
+  {
+    "station_no": "9652",
+    "station_name": "STRAIMONT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "222952.0",
+    "station_local_y": "54286.0"
+  },
+  {
+    "station_no": "5811",
+    "station_name": "STREUPAS",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "237626.0",
+    "station_local_y": "144478.0"
+  },
+  {
+    "station_no": "9617",
+    "station_name": "SUGNY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "188248.0",
+    "station_local_y": "55039.0"
+  },
+  {
+    "station_no": "L7140",
+    "station_name": "Suxy",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "223997.0",
+    "station_local_y": "51426.0"
+  },
+  {
+    "station_no": "L5460",
+    "station_name": "Suzeril",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "163837.0",
+    "station_local_y": "146834.0"
+  },
+  {
+    "station_no": "15",
+    "station_name": "S\u00fbre et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "5921",
+    "station_name": "TABREUX",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "232853.0",
+    "station_local_y": "125886.0"
+  },
+  {
+    "station_no": "8016",
+    "station_name": "TAILFER",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "186380.16",
+    "station_local_y": "120436.032"
+  },
+  {
+    "station_no": "6858",
+    "station_name": "TAILLES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "249071.0",
+    "station_local_y": "102189.0"
+  },
+  {
+    "station_no": "6671",
+    "station_name": "TARGNON",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "250013.0",
+    "station_local_y": "123454.0"
+  },
+  {
+    "station_no": "6497",
+    "station_name": "TERNELL",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "276725.0",
+    "station_local_y": "141812.0"
+  },
+  {
+    "station_no": "L5860",
+    "station_name": "Theux",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "252201.0",
+    "station_local_y": "137368.0"
+  },
+  {
+    "station_no": "L5580",
+    "station_name": "Thioux",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "265410.0",
+    "station_local_y": "120828.0"
+  },
+  {
+    "station_no": "L7560",
+    "station_name": "Thon",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "194731.0",
+    "station_local_y": "128043.0"
+  },
+  {
+    "station_no": "L6630",
+    "station_name": "Thuin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "144080.0",
+    "station_local_y": "114089.0"
+  },
+  {
+    "station_no": "L8590",
+    "station_name": "Thy-le-Bauduin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "161006.0",
+    "station_local_y": "109416.0"
+  },
+  {
+    "station_no": "L6060",
+    "station_name": "Thy-le-Ch\u00e2teau",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "154019.0",
+    "station_local_y": "107979.0"
+  },
+  {
+    "station_no": "9561",
+    "station_name": "TINTIGNY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "232940.0",
+    "station_local_y": "42360.0"
+  },
+  {
+    "station_no": "L5220",
+    "station_name": "Tintigny",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "232924.0",
+    "station_local_y": "43413.0"
+  },
+  {
+    "station_no": "9741",
+    "station_name": "TORGNY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "229481.0",
+    "station_local_y": "22474.0"
+  },
+  {
+    "station_no": "9743",
+    "station_name": "TORGNY",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "230422.0",
+    "station_local_y": "22381.0"
+  },
+  {
+    "station_no": "3282",
+    "station_name": "TOURNAI",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "80779.0",
+    "station_local_y": "144659.0"
+  },
+  {
+    "station_no": "9021",
+    "station_name": "TREIGNES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "171986.0",
+    "station_local_y": "86423.0"
+  },
+  {
+    "station_no": "3572",
+    "station_name": "TRIVIERES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "134400.0",
+    "station_local_y": "126654.0"
+  },
+  {
+    "station_no": "L6070",
+    "station_name": "Trois-Ponts",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "256923.0",
+    "station_local_y": "118926.0"
+  },
+  {
+    "station_no": "6832",
+    "station_name": "TROIS-PONTS",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "257242.0",
+    "station_local_y": "118075.0"
+  },
+  {
+    "station_no": "L7290",
+    "station_name": "Trou de Bra",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "247026.0",
+    "station_local_y": "115885.0"
+  },
+  {
+    "station_no": "1954",
+    "station_name": "TUBIZE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "138798.0",
+    "station_local_y": "153822.0"
+  },
+  {
+    "station_no": "L7610",
+    "station_name": "Tubize",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "139207.0",
+    "station_local_y": "153153.0"
+  },
+  {
+    "station_no": "1951",
+    "station_name": "TUBIZE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "137825.0",
+    "station_local_y": "153311.0"
+  },
+  {
+    "station_no": "L8020",
+    "station_name": "Tubize Coeurcq",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "138215.0",
+    "station_local_y": "152697.0"
+  },
+  {
+    "station_no": "L8010",
+    "station_name": "Tubize Stincup",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "136688.0",
+    "station_local_y": "152984.0"
+  },
+  {
+    "station_no": "1898",
+    "station_name": "UCCLE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "149179.0",
+    "station_local_y": "165221.0"
+  },
+  {
+    "station_no": "L6260",
+    "station_name": "Upigny",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "185079.0",
+    "station_local_y": "141226.0"
+  },
+  {
+    "station_no": "L7511",
+    "station_name": "Val-dieu",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "249786.0",
+    "station_local_y": "156184.0"
+  },
+  {
+    "station_no": "7296",
+    "station_name": "VEDRIN",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "184882.0",
+    "station_local_y": "132188.0"
+  },
+  {
+    "station_no": "L7150",
+    "station_name": "Verviers",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "254550.0",
+    "station_local_y": "143074.0"
+  },
+  {
+    "station_no": "641601",
+    "station_name": "VESDRE ENTREE SEUIL AMONT",
+    "site_name": "EUPEN",
+    "station_local_x": "274781.6404",
+    "station_local_y": "147785.5541"
+  },
+  {
+    "station_no": "38",
+    "station_name": "Vesdre et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "6848",
+    "station_name": "VIELSALM",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "260695.0",
+    "station_local_y": "108978.0"
+  },
+  {
+    "station_no": "19",
+    "station_name": "Vierre et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L6300",
+    "station_name": "Vieuxville",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "233071.0",
+    "station_local_y": "121039.0"
+  },
+  {
+    "station_no": "L6220",
+    "station_name": "Villers-devant-Orval",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "219790.0",
+    "station_local_y": "34463.0"
+  },
+  {
+    "station_no": "24",
+    "station_name": "Viroin et affluents",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L6440",
+    "station_name": "Virton",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "234474.0",
+    "station_local_y": "29038.0"
+  },
+  {
+    "station_no": "5451",
+    "station_name": "VISE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "243306.0",
+    "station_local_y": "158093.0"
+  },
+  {
+    "station_no": "L8510",
+    "station_name": "Volaiville",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "240038.0",
+    "station_local_y": "63694.0"
+  },
+  {
+    "station_no": "9436",
+    "station_name": "VRESSE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "190278.0",
+    "station_local_y": "62500.0"
+  },
+  {
+    "station_no": "L7000",
+    "station_name": "Vresse-sur-Semois",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "190945.0",
+    "station_local_y": "62564.0"
+  },
+  {
+    "station_no": "L5640",
+    "station_name": "Walcourt",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "154691.0",
+    "station_local_y": "104779.0"
+  },
+  {
+    "station_no": "7781",
+    "station_name": "WALCOURT (GARE)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "154838.0",
+    "station_local_y": "105421.0"
+  },
+  {
+    "station_no": "7784",
+    "station_name": "WALCOURT (SEUIL)",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "154095.0",
+    "station_local_y": "104225.0"
+  },
+  {
+    "station_no": "7812",
+    "station_name": "WALCOURT-VOGENEE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "155334.0",
+    "station_local_y": "104153.0"
+  },
+  {
+    "station_no": "Wallonie",
+    "station_name": "Wallonie",
+    "site_name": "Bassins",
+    "station_local_x": "",
+    "station_local_y": ""
+  },
+  {
+    "station_no": "L7190",
+    "station_name": "Wanlin",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "199399.0",
+    "station_local_y": "94416.0"
+  },
+  {
+    "station_no": "L5820",
+    "station_name": "Wanze",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "210171.0",
+    "station_local_y": "137156.0"
+  },
+  {
+    "station_no": "5578",
+    "station_name": "WAREMME",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "213047.0",
+    "station_local_y": "155319.0"
+  },
+  {
+    "station_no": "8163",
+    "station_name": "WARNANT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "182807.0",
+    "station_local_y": "110488.0"
+  },
+  {
+    "station_no": "3534",
+    "station_name": "WASMUEL",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "112605.0",
+    "station_local_y": "126837.0"
+  },
+  {
+    "station_no": "8078",
+    "station_name": "WAULSORT",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "184325.0",
+    "station_local_y": "99750.0"
+  },
+  {
+    "station_no": "1043",
+    "station_name": "WAVRE",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "168876.0",
+    "station_local_y": "157547.0"
+  },
+  {
+    "station_no": "L7410",
+    "station_name": "Weweler",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "277498.0",
+    "station_local_y": "100084.0"
+  },
+  {
+    "station_no": "L5961",
+    "station_name": "Wiers",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "91479.0",
+    "station_local_y": "134082.0"
+  },
+  {
+    "station_no": "7944",
+    "station_name": "WIHERIES",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "136203.0",
+    "station_local_y": "109785.0"
+  },
+  {
+    "station_no": "L7370",
+    "station_name": "Willerzie",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "182093.0",
+    "station_local_y": "76885.0"
+  },
+  {
+    "station_no": "6971",
+    "station_name": "WIRTZFELD",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "284295.0",
+    "station_local_y": "125553.0"
+  },
+  {
+    "station_no": "L5950",
+    "station_name": "Wyompont",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "236102.0",
+    "station_local_y": "86718.0"
+  },
+  {
+    "station_no": "L7990",
+    "station_name": "Yves-Gomz\u00e9e",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "161999.0",
+    "station_local_y": "102957.0"
+  },
+  {
+    "station_no": "8133",
+    "station_name": "YVOIR",
+    "site_name": "Direction de la Gestion hydrologique",
+    "station_local_x": "188330.0",
+    "station_local_y": "114307.0"
+  },
+  {
+    "station_no": "L5800",
+    "station_name": "Yvoir",
+    "site_name": "Direction des Cours d'Eau Non Navigables",
+    "station_local_x": "187715.0",
+    "station_local_y": "113795.0"
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "md_returnfields": "station_no,station_name,ts_path,ts_id,ts_unitsymbol,station_local_x,station_local_y,station_elevation",
+  "ca_sta_returnfields": ""
+}
