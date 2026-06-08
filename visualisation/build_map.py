@@ -1,8 +1,9 @@
 from pathlib import Path
 ROOT = Path(__file__).parent.parent
-DB_SPW = str(ROOT / "export/databases/spw_liege.db")
-DB_PIEZ = str(ROOT / "export/databases/piez_liege.db")
-DB_ERA5 = str(ROOT / "export/databases/era5_liege.db")
+DB_SPW      = str(ROOT / "export/databases/spw_liege.db")
+DB_PIEZ     = str(ROOT / "export/databases/piez_liege.db")
+DB_ERA5     = str(ROOT / "export/databases/era5_liege.db")
+DB_CORINE   = str(ROOT / "export/databases/corine_liege.db")
 DB_FORECAST = str(ROOT / "export/databases/forecast_liege.db")
 
 """
@@ -54,31 +55,30 @@ def safe(v, fmt=".3f"):
 # ── Load data from databases ──────────────────────────────────────────────────
 
 def load_spw():
-    if not DB_SPW.exists(): return [], []
-    con = sqlite3.connect(str(DB_SPW))
+    if not Path(DB_SPW).exists(): return [], []
+    con = sqlite3.connect(DB_SPW)
     con.row_factory = sqlite3.Row
 
     # River stations with rise rate
     rivers = con.execute("""
-        SELECT h.station_no, h.station_name, h.river_name, h.basin,
-               h.level_m, h.timestamp,
-               r.delta_1h_m, r.delta_3h_m, r.tendency,
-               r.basin_rain_7d_mm, r.risk_signal,
-               s.lat, s.lon
-        FROM v_flood_context r
-        JOIN v_latest_H h USING(station_no)
-        JOIN stations s   ON h.station_no = s.station_no
-        WHERE s.lat IS NOT NULL AND s.lat != 0
+        SELECT station_no, station_name, river_name, basin,
+               level_m, timestamp,
+               delta_1h_m, delta_3h_m, tendency,
+               basin_rain_7d_mm, risk_signal,
+               lat, lon
+        FROM t_flood_context
+        WHERE lat IS NOT NULL AND lat != 0
+          AND level_m IS NOT NULL
     """).fetchall()
 
-    # Discharge stations
+    # Discharge — join to t_flood_context for station metadata + coords
     discharge = con.execute("""
-        SELECT q.station_no, q.station_name, q.river_name,
+        SELECT q.station_no, f.station_name, f.river_name,
                q.discharge_m3s, q.timestamp,
-               s.lat, s.lon
-        FROM v_latest_Q q
-        JOIN stations s ON q.station_no = s.station_no
-        WHERE s.lat IS NOT NULL AND q.discharge_m3s IS NOT NULL
+               f.lat, f.lon
+        FROM t_latest_Q q
+        LEFT JOIN t_flood_context f ON q.station_no = f.station_no
+        WHERE q.discharge_m3s IS NOT NULL
     """).fetchall()
 
     con.close()
@@ -86,57 +86,56 @@ def load_spw():
 
 
 def load_precip_stations():
-    if not DB_SPW.exists(): return []
-    con = sqlite3.connect(str(DB_SPW))
+    if not Path(DB_SPW).exists(): return []
+    con = sqlite3.connect(DB_SPW)
     con.row_factory = sqlite3.Row
     rows = con.execute("""
-        SELECT ar.station_no, ar.station_name, ar.river_name, ar.basin,
-               ar.rain_3d_mm, ar.rain_7d_mm, ar.rain_14d_mm,
-               s.lat, s.lon
-        FROM v_antecedent_rainfall ar
-        JOIN stations s ON ar.station_no = s.station_no
-        WHERE s.lat IS NOT NULL AND s.lat != 0
+        SELECT station_no, station_name, river_name, basin,
+               rain_3d_mm, rain_7d_mm, rain_14d_mm, lat, lon
+        FROM t_antecedent_rain
+        WHERE lat IS NOT NULL AND lat != 0
     """).fetchall()
     con.close()
     return [dict(r) for r in rows]
 
 
 def load_groundwater():
-    if not DB_PIEZ.exists(): return []
-    con = sqlite3.connect(str(DB_PIEZ))
+    if not Path(DB_PIEZ).exists(): return []
+    con = sqlite3.connect(DB_PIEZ)
     con.row_factory = sqlite3.Row
     rows = con.execute("""
         SELECT g.station_no, g.station_name, g.aquifer, g.commune, g.province,
                g.current_depth_m, g.mean_depth_m, g.anomaly_m, g.gw_state,
                g.depth_percentile, g.timestamp,
-               s.lat, s.lon
+               g.lat, g.lon
         FROM v_groundwater_anomaly g
-        JOIN stations s ON g.station_no = s.station_no
-        WHERE s.lat IS NOT NULL AND s.lat != 0
-          AND g.province = 'LIEGE'
+        WHERE g.lat IS NOT NULL AND g.lat != 0
+          AND g.lat BETWEEN 50.15 AND 50.90
+          AND g.lon BETWEEN 5.35 AND 6.40
     """).fetchall()
     con.close()
     return [dict(r) for r in rows]
 
 
 def load_forecast():
-    if not DB_FORECAST.exists(): return []
-    con = sqlite3.connect(str(DB_FORECAST))
+    if not Path(DB_FORECAST).exists(): return []
+    con = sqlite3.connect(DB_FORECAST)
     con.row_factory = sqlite3.Row
     rows = con.execute("""
         SELECT a.point_id, a.description, a.lat, a.lon,
                a.precip_24h_mm, a.precip_72h_mm, a.precip_7d_mm,
-               a.temp_max_c, a.temp_min_c,
+               acc.temp_max_c, acc.temp_min_c,
                a.alert_24h, a.alert_72h
         FROM v_forecast_alert a
+        LEFT JOIN v_forecast_accumulation acc USING(point_id)
     """).fetchall()
     con.close()
     return [dict(r) for r in rows]
 
 
 def load_era5_heatmap():
-    if not DB_ERA5.exists(): return []
-    con = sqlite3.connect(str(DB_ERA5))
+    if not Path(DB_ERA5).exists(): return []
+    con = sqlite3.connect(DB_ERA5)
     rows = con.execute("""
         SELECT g.lat, g.lon,
                SUM(o.value) * 1000 AS rain_7d_mm
@@ -182,9 +181,10 @@ def build_map():
         heatmap_layer = folium.FeatureGroup(name="ERA5 Rainfall (7d heatmap)", show=True)
         HeatMap(
             era5_data,
-            radius=40,
-            blur=30,
-            min_opacity=0.2,
+            radius=12,
+            blur=8,
+            min_opacity=0.3,
+            max_zoom=10,
             gradient={0.2: "#ffffcc", 0.5: "#41b6c4", 0.8: "#225ea8"},
         ).add_to(heatmap_layer)
         heatmap_layer.add_to(m)
