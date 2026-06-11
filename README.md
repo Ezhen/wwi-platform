@@ -1,32 +1,95 @@
 # Wallonia Water Intelligence Platform (WWI)
 
-> From rainfall to rivers to groundwater — a unified operational view of the water cycle.
+> Physics-grounded agentic environmental intelligence for the Liège/Meuse basin.
 
-Five independent data streams → one environmental intelligence system → operational decisions.
+Real-time multi-source ingestion → materialised indicators → ML forecasting → SHAP explainability → autonomous alert engine → LLM-generated operational bulletins.
 
-Built as a portfolio project demonstrating environmental data engineering, hydrological analysis, and operational decision support for the Liège/Meuse basin in Wallonia, Belgium.
+Built as a portfolio project demonstrating full-stack environmental data engineering, hydrological modelling, and operational AI decision support.
 
 ---
 
 ## What it does
 
-The platform ingests, fuses, and analyses data from five official sources to answer one question:
+Every morning, one command:
 
-**"What is the water situation in the Liège basin right now, and what should I expect in the next 72 hours?"**
+```bash
+bash update.sh
+```
 
-This is the question water utilities (SWDE, INASEP), river managers (SPW), and environmental consultancies ask every morning. Currently they check five separate portals manually. This platform fuses them into one.
+Produces:
+- **Live river level forecast** — H at SAUHEID (Ourthe) for t+24h/48h/72h
+- **Physics-informed alert** — composite multi-signal diagnosis (LOW_FLOW, RAPID_RISE, FLOOD_EMERGENCY etc.)
+- **LLM bulletin** — natural language operational briefing via Claude API
+- **Forecast verification** — yesterday's prediction vs today's observed, skill score updated
+
+---
+
+## Architecture
+
+```
+Five data streams
+       │
+       ▼
+┌─────────────────────────────────────────┐
+│           ingestion/                    │
+│  SPW KiWIS API    → spw_liege.db       │
+│  ERA5 / CDS API   → era5_liege.db      │
+│  Open-Meteo API   → forecast_liege.db  │
+│  SPW Piézométrie  → piez_liege.db      │
+│  CORINE Land Cover→ corine_liege.db    │
+│  SPW Watersheds   → catchments_liege.db│
+└────────────────┬────────────────────────┘
+                 │
+                 ▼
+┌─────────────────────────────────────────┐
+│           processing/                   │
+│  rebuild_all.py → materialised tables  │
+│    t_latest_H / t_latest_Q             │
+│    t_antecedent_rain / t_rise_rate     │
+│    t_flood_context                     │
+└────────────────┬────────────────────────┘
+                 │
+       ┌─────────┴──────────┐
+       ▼                    ▼
+┌─────────────┐    ┌────────────────────┐
+│   model/    │    │   live_explain.py  │
+│ RF-deltaH   │    │ live prediction +  │
+│ NSE=0.975   │───▶│ SHAP explainability│
+│ (test 2025) │    └────────┬───────────┘
+│ NSE=0.670   │             │
+│ (flood 2021)│             ▼
+└─────────────┘    ┌────────────────────┐
+                   │  build_alerts.py   │
+                   │ composite alerts:  │
+                   │ LOW_FLOW_SUSTAINED │
+                   │ RAPID_RISE_WET     │
+                   │ FLOOD_EMERGENCY    │
+                   │ ANOMALY_RAIN_NO_   │
+                   │   RESPONSE         │
+                   └────────┬───────────┘
+                            │
+                            ▼
+                   ┌────────────────────┐
+                   │  llm_bulletin.py   │
+                   │ Claude API →       │
+                   │ daily operational  │
+                   │ briefing           │
+                   └────────────────────┘
+```
 
 ---
 
 ## Data sources
 
-| # | Source | Variables | Resolution | Update |
-|---|--------|-----------|------------|--------|
-| 1 | [SPW Hydrométrie](https://hydrometrie.wallonie.be) | River levels (H), discharge (Q), precipitation | 5 minutes | Live |
-| 2 | [SPW Piézométrie](https://piezometrie.wallonie.be) | Groundwater depth + piezometric level | Daily | Live |
-| 3 | [ERA5 / Copernicus](https://cds.climate.copernicus.eu) | Rainfall, temperature, soil moisture | Hourly, 0.25° | 5-day lag |
-| 4 | [Open-Meteo](https://open-meteo.com) | 7-day forecast: precip, temp, soil moisture | Hourly | Live |
-| 5 | [CORINE Land Cover](https://www.geo.be) | Land use — forests, urban, agriculture, wetlands | 100m vector | Static 2018 |
+| Source | Variables | Resolution | Update |
+|--------|-----------|------------|--------|
+| [SPW Hydrométrie](https://hydrometrie.wallonie.be) | H, Q, Precip — 98 stations | 5 min | Live |
+| [SPW Piézométrie](https://piezometrie.wallonie.be) | Groundwater — 263 stations | Daily | Live |
+| [ERA5 / Copernicus CDS](https://cds.climate.copernicus.eu) | swvl1 (soil moisture), tp | Daily means | 5-day lag |
+| [Open-Meteo](https://open-meteo.com) | 7-day forecast precip + soil moisture | Hourly | Live |
+| [CORINE Land Cover 2018](https://www.geo.be) | Forest/urban/agri fractions | 100m vector | Static |
+| [GLO-30 DEM](https://copernicus-dem-30m.s3.amazonaws.com) | Terrain slope | 30m raster | Static |
+| [SPW Géoportail](https://geoservices.wallonie.be) | Official watershed polygons | Vector | Static |
 
 ---
 
@@ -34,172 +97,159 @@ This is the question water utilities (SWDE, INASEP), river managers (SPW), and e
 
 ```
 wwi/
-├── update.sh                    ← daily update — run this
+├── update.sh                    ← daily pipeline entry point
+│
+├── live_explain.py              ← live prediction + SHAP explainability
+├── build_alerts.py              ← composite multi-signal alert engine
+├── llm_bulletin.py              ← LLM bulletin via Claude API
+├── forecast_verification.py     ← daily skill score log
 │
 ├── ingestion/                   ← data collection
-│   ├── spw_ingest.py            ← H, Q, Precip from SPW KiWIS API
-│   ├── piez_ingest.py           ← groundwater from SPW piézométrie
-│   ├── era5_ingest.py           ← ERA5 reanalysis from CDS API
-│   ├── corine_ingest.py         ← CORINE land cover (one-time)
-│   └── forecast_ingest.py       ← Open-Meteo 7-day forecast
+│   ├── spw_ingest.py            ← H/Q/Precip from SPW KiWIS API
+│   ├── piez_ingest.py           ← groundwater
+│   ├── era5_lean_ingest.py      ← ERA5 swvl1 + tp (daily means, ~50MB)
+│   ├── era5_2021_ingest.py      ← ERA5 2021 flood period specifically
+│   ├── forecast_ingest.py       ← Open-Meteo 7-day forecast
+│   └── corine_ingest.py         ← CORINE land cover (one-time)
 │
-├── processing/                  ← indicators and transformations
-│   ├── rebuild_all.py           ← materialise indicator tables
-│   └── add_coords.py            ← Lambert 72 → WGS84 conversion
+├── processing/                  ← indicators and spatial processing
+│   ├── rebuild_all.py           ← materialise indicator tables (~1.3s)
+│   ├── download_watersheds.py   ← SPW official watersheds from géoportail
+│   ├── assign_watersheds.py     ← station → watershed assignment
+│   ├── aggregate_catchment_stats.py ← slope + CORINE per catchment
+│   ├── extract_slopes.py        ← per-station slope from GLO-30
+│   ├── ndvi_from_corine.py      ← synthetic NDVI time series
+│   └── dem_processing.py        ← DEM download + slope raster
 │
-├── visualisation/               ← outputs
-│   └── build_map.py             ← Folium interactive map → wwi_map.html
+├── model/                       ← ML training and feature engineering
+│   ├── build_features.py        ← v1 feature matrix (1007 days × 59 features)
+│   ├── build_features_v2.py     ← v2 + swvl1 + NDVI + CORINE fractions
+│   ├── train_model.py           ← RF-deltaH model training + evaluation
+│   └── explain_prediction.py    ← SHAP analysis
 │
-├── discovery/                   ← API exploration scripts
-│   ├── spw_discover.py
-│   └── coords_check.py
+├── visualisation/
+│   ├── build_map.py             ← Folium interactive map (5 layers)
+│   └── plot_spatial.py          ← Cartopy spatial maps (slope, NDVI, CORINE)
 │
 ├── export/
-│   ├── databases/               ← SQLite databases (see below)
-│   ├── csvs/                    ← sample CSV exports
-│   ├── jsons/                   ← station catalogue JSONs
-│   └── netcdfs/                 ← ERA5 raw download
+│   ├── databases/               ← SQLite (git-ignored, ~150MB total)
+│   ├── csvs/                    ← feature matrices, predictions, alerts
+│   │   └── archive/             ← timestamped daily outputs
+│   └── maps/                    ← wwi_spatial_maps.png
 │
-└── docs/
-    ├── WWI_concept.md           ← full project concept
-    ├── WWI_ROADMAP.md           ← work packages and next steps
-    └── poster.png               ← project poster
+└── supplementary/               ← one-off scripts, debug, raw data
 ```
 
 ---
 
 ## Databases
 
-All data lives in SQLite — queryable directly, no server needed.
-
 | Database | Content | Size |
 |----------|---------|------|
-| `spw_liege.db` | H, Q, Precip — 98 stations, 5-min live | ~40 MB |
+| `spw_liege.db` | H/Q/Precip — 98 stations, 30-day rolling 5-min | ~50 MB |
+| `historical_liege.db` | H/Q/Precip daily+hourly 2021+2023-2025 | ~10 MB |
+| `era5_liege.db` | swvl1 daily means 2021-2025, 42 grid points | ~50 MB |
+| `catchments_liege.db` | 95 watershed polygons + slope + CORINE fractions | ~5 MB |
+| `corine_liege.db` | 3,225 land cover polygons | ~2 MB |
+| `forecast_liege.db` | Open-Meteo 7-day, 7 basin points | ~2 MB |
 | `piez_liege.db` | Groundwater — 263 stations | ~2 MB |
-| `era5_liege.db` | Reanalysis grid — 42 points | ~22 MB |
-| `corine_liege.db` | Land cover — 3,225 polygons | ~2 MB |
-| `forecast_liege.db` | 7-day forecast — 7 basin points | ~2 MB |
 
-### Key tables (after running `rebuild_all.py`)
+### Key materialised tables (rebuilt every update in ~1.3s)
 
-**spw_liege.db**
-- `t_latest_H` — current water level per station
-- `t_latest_Q` — current discharge per station
-- `t_antecedent_rain` — 3/7/14-day rainfall accumulation per station
-- `t_rise_rate` — ΔH/Δt at 1h/3h/6h + tendency label per station
-- `t_flood_context` — operational intelligence: level + rise rate + antecedent rain + risk signal
+```sql
+t_latest_H          -- current gauge-relative water level per station
+t_latest_Q          -- current discharge per station
+t_antecedent_rain   -- 3/7/14-day rainfall accumulation
+t_rise_rate         -- ΔH/Δt at 1h/3h/6h + tendency label
+t_flood_context     -- unified operational view per station
+t_operational_alerts-- active composite alerts with physical reasoning
+```
 
-**piez_liege.db**
-- `t_latest_groundwater` — current depth per station
-- `t_groundwater_anomaly` — current vs mean + anomaly + state label
+---
 
-**forecast_liege.db**
-- `v_forecast_accumulation` — 24h/72h/7d totals per basin point
-- `v_forecast_alert` — alert levels per point
+## Forecast model
+
+**RF-deltaH** — Random Forest predicting ΔH (change in water level) rather than absolute H.
+
+| Metric | t+1d | t+2d | t+3d |
+|--------|------|------|------|
+| Test NSE (2025) | **0.975** | 0.876 | 0.820 |
+| Test RMSE | 0.043m | 0.095m | 0.115m |
+| Flood NSE (Jul 2021) | **0.670** | 0.372 | 0.071 |
+
+**Key finding from feature importance:** upstream network H (Stavelot, Trois-Ponts, Comblain) accounts for 97% of predictive importance — confirming that a well-gauged river network implicitly encodes basin wetness state, land cover response, and antecedent conditions. Adding ERA5 soil moisture, NDVI, and CORINE fractions adds no measurable skill at daily resolution. The model ceiling is the daily timestep; an hourly model is the next development step.
+
+**SHAP explainability** runs live daily, logging which factors are raising/lowering the predicted level.
+
+---
+
+## Alert engine
+
+Six composite multi-signal alert conditions evaluated daily:
+
+| Code | Trigger | Physical meaning |
+|------|---------|-----------------|
+| `DROUGHT_CRITICAL` | H<0.25m + Q<5 m³/s | Baseflow exhausted |
+| `LOW_FLOW_SUSTAINED` | H<0.45m + dry 7d + no forecast relief | Summer abstraction risk |
+| `RAPID_RISE_WET_ANTECEDENT` | Fast rise + saturated catchment | July 2021 precursor pattern |
+| `RAPID_RISE` | Fast rise, dry antecedent | Standard flood watch |
+| `FLOOD_EMERGENCY/ELEVATED/WATCH` | H > 3.5/2.5/1.5m | Operational halt triggers |
+| `ANOMALY_RAIN_NO_RESPONSE` | High rain but low H | Physics consistency check |
+
+The `ANOMALY_RAIN_NO_RESPONSE` alert flags physically implausible states — the AI knows when to distrust its own inputs.
+
+---
+
+## Spatial datasets
+
+- **Terrain slope** — GLO-30 DEM (30m), Liège basin mosaic, 10800×10800 pixels
+- **NDVI** — synthetic daily time series 2021-2025 from CORINE land cover classes + seasonal sinusoidal model
+- **Catchment stats** — slope and CORINE fractions clipped to SPW official watershed polygons
 
 ---
 
 ## Quick start
 
-### Requirements
-
 ```bash
-pip install requests pandas pyproj folium cdsapi netCDF4 geopandas
+pip install requests pandas pyproj folium cdsapi netCDF4 \
+            geopandas shapely rasterio pysheds scikit-learn \
+            shap anthropic
 ```
 
-For ERA5: register at [cds.climate.copernicus.eu](https://cds.climate.copernicus.eu) and create `~/.cdsapirc`.
+ERA5: register at [cds.climate.copernicus.eu](https://cds.climate.copernicus.eu) → `~/.cdsapirc`
 
-### Daily update
+LLM bulletin: set `ANTHROPIC_API_KEY` environment variable.
 
 ```bash
+# One-time setup
+python ingestion/era5_lean_ingest.py
+python ingestion/corine_ingest.py
+python processing/download_watersheds.py
+python processing/rebuild_all.py
+python model/build_features_v2.py
+python model/train_model.py
+
+# Daily
 bash update.sh
 ```
 
-This runs all ingestion scripts, rebuilds indicators, and regenerates the map. Output logged to `update.log`.
+---
 
-### Individual steps
+## Forecast verification
 
-```bash
-python ingestion/spw_ingest.py       # fetch latest SPW data
-python ingestion/piez_ingest.py      # fetch latest groundwater
-python ingestion/forecast_ingest.py  # fetch latest 7-day forecast
-python processing/rebuild_all.py     # rebuild indicator tables
-python visualisation/build_map.py    # generate wwi_map.html
-```
-
-### One-time setup (first run only)
-
-```bash
-python ingestion/era5_ingest.py      # download ERA5 reanalysis
-python ingestion/corine_ingest.py    # download CORINE land cover
-```
+The platform verifies itself daily — yesterday's forecast vs today's observed H, logged to `export/csvs/forecast_verification.csv`. Persistence baseline included for comparison.
 
 ---
 
-## The map
+## Data fusion challenges addressed
 
-`build_map.py` generates `wwi_map.html` — a self-contained interactive map with five layers:
-
-- **River levels** — circles coloured by tendency (red=rising fast → blue=stable → green=falling)
-- **Precipitation stations** — coloured by 7-day accumulation
-- **Groundwater** — diamonds coloured by anomaly state
-- **Forecast points** — alert level per basin point
-- **ERA5 rainfall heatmap** — 7-day accumulated precipitation background
-
-Click any station for a full popup with current state and derived indicators.
-
----
-
-## The centrepiece: July 2021 flood retrospective
-
-On 14–16 July 2021, the Vesdre and Meuse valleys experienced the worst flooding in recorded Belgian history. 42 people died in Liège province alone.
-
-The platform will reconstruct that event using ERA5 reanalysis + SPW historical data, showing what the integrated picture would have looked like 48 hours before the peak.
-
-**Status:** ERA5 historical download pending. SPW historical data request submitted.
-
----
-
-## Data fusion challenges
-
-This project explicitly addresses six real-world data fusion problems:
-
-| Problem | Impact | Approach |
-|---------|--------|----------|
-| Temporal misalignment | 5-min / hourly / daily / 5-day-lag sources | Explicit resampling to common grid |
-| Spatial misalignment | Point gauges vs 0.25° grid vs catchment | Catchment-weighted ERA5 (WP2) |
-| Quality code heterogeneity | SPW codes 200/40/255 vs ERA5 (none) | Quality filter + uncertainty flag |
-| Reference frame inconsistency | Relative datum vs NGF vs accumulation | Documented per source |
-| Missing catchment attribution | Naive basin averaging | DEM + flow accumulation (planned) |
-| Missing data during floods | Sensors offline when needed most | Missingness map in quality dashboard |
-
----
-
-## Roadmap
-
-- **WP1** — Temporal alignment study (rainfall→river cross-correlation, ~6h Ourthe lag)
-- **WP2** — Catchment-aware rainfall aggregation
-- **WP3** — July 2021 flood retrospective reconstruction
-- **WP4** — Data quality dashboard
-- **WP5** — Simple river level forecast model (persistence → regression → Random Forest)
-- **WP6** — Collaborative interactive visualisation app
-
-See [docs/WWI_ROADMAP.md](docs/WWI_ROADMAP.md) for details.
-
----
-
-## Target audience
-
-SWDE · INASEP · SPW · Aquawal · Antea Group · environmental consultancies · researchers
-
----
-
-## Data sources & attribution
-
-- SPW Wallonie — [hydrometrie.wallonie.be](https://hydrometrie.wallonie.be) / [piezometrie.wallonie.be](https://piezometrie.wallonie.be)
-- Copernicus Climate Data Store — ERA5 reanalysis
-- Open-Meteo — [open-meteo.com](https://open-meteo.com) (CC BY 4.0)
-- CORINE Land Cover 2018 — NGI Belgium / [geo.be](https://www.geo.be)
+| Challenge | Approach |
+|-----------|----------|
+| Temporal misalignment (5min/hourly/daily/5d-lag) | Explicit resampling, daily feature matrix |
+| Spatial misalignment (point/grid/catchment) | ERA5 catchment-weighted by watershed polygon |
+| H units (NGF absolute vs gauge-relative) | `Value` returnfields in SPW KiWIS API |
+| Missing data during floods | Median imputation per feature, documented |
+| Catchment attribution | SPW official watershed polygons from géoportail |
 
 ---
 
@@ -208,4 +258,5 @@ SWDE · INASEP · SPW · Aquawal · Antea Group · environmental consultancies �
 Eugène Ivanov — postdoctoral researcher, University of Liège (MAST team)  
 Coupled hydrodynamic-wave-sediment-biogeochemical modelling · Environmental data engineering
 
-*This project is part of an active portfolio. Contributions and feedback welcome.*
+*Built from scratch as a working operational intelligence system.  
+Architecture scales to any monitored environmental system.*
