@@ -1,0 +1,9 @@
+version,features_added,test_NSE_t1,flood_NSE_t1,delta_test,delta_flood,date
+v1.0,baseline,0.953,0.506,+0.000,+0.000,2026-06-08
+v1.1,delta_H,0.974,0.670,+0.021,+0.164,2026-06-08
+v1.2,catchment_weighted_ERA5,0.975,0.666,+0.000,-0.004,2026-06-09
+v1.2,catchment_weighted_ERA5,0.974,nan,-0.000,+nan,2026-06-11
+v1.2,catchment_weighted_ERA5,0.975,0.667,+0.000,-0.004,2026-06-11
+v1.2,swvl1+NDVI+ERA5_2021,0.975,0.671,+0.001,+0.001,2026-06-11
+v1.2,catchment_weighted_ERA5,0.975,0.666,+0.000,-0.004,2026-06-11
+v1.3,swvl1+NDVI+CORINE+slope,0.975,0.670,+0.001,+0.000,2026-06-11

@@ -1,5 +1,5 @@
 from pathlib import Path
-ROOT = Path(__file__).parent.parent
+ROOT = Path(__file__).resolve().parent.parent
 DB_SPW      = str(ROOT / "export/databases/spw_liege.db")
 DB_PIEZ     = str(ROOT / "export/databases/piez_liege.db")
 DB_ERA5     = str(ROOT / "export/databases/era5_liege.db")
@@ -17,6 +17,9 @@ from folium.plugins import MarkerCluster, HeatMap
 import json
 import math
 from datetime import datetime
+
+
+
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 

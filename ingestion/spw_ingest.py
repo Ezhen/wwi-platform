@@ -1,5 +1,5 @@
 from pathlib import Path
-ROOT = Path(__file__).parent.parent
+ROOT = Path(__file__).resolve().parent.parent
 DB_SPW = str(ROOT / "export/databases/spw_liege.db")
 """
 SPW KiWIS — Multi-parameter ingestion (H, Q, Precip) into SQLite
@@ -202,10 +202,10 @@ def discover_stations(province: str, group_id: str) -> pd.DataFrame:
 def fetch_observations(ts_path: str, days: int) -> pd.DataFrame:
     now   = datetime.now(timezone.utc)
     start = now - timedelta(days=days)
-    # H uses "Absolute Value" / "AV Quality Code"
+    # H uses gauge-relative Value (fixed from NGF Absolute Value)
     # Q and Precip use "Value" / "Quality Code"
     is_H = "/H/" in ts_path or "/H_sonde/" in ts_path or "/Habs" in ts_path
-    returnfields = ("Timestamp,Absolute Value,AV Quality Code"
+    returnfields = ("Timestamp,Value,Quality Code"
                     if is_H else
                     "Timestamp,Value,Quality Code")
     params = {

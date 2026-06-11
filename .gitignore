@@ -1,36 +1,24 @@
-# ── Raw data files ─────────────────────────────────────────
-*.nc
-*.zip
+# Temporary download directories
 era5_extract/
-corine_extract/
-export/netcdfs/
-
-# ── Logs and temp ──────────────────────────────────────────
-*.log
-Log.log
 __pycache__/
 *.pyc
-*.pyo
+
+# Large raster files
+supplementary/dem/*.tif
+
+# Databases (too large for git)
+export/databases/*.db
+
+# Archive outputs
+export/csvs/archive/
+export/netcdfs/
+
+# Sensitive
 .env
-
-# ── SQLite lock files ──────────────────────────────────────
-*.db-wal
-*.db-shm
-*.db-journal
-
-# ── OS files ───────────────────────────────────────────────
-.DS_Store
-Thumbs.db
-
-# ── Supplementary/diagnostic scripts ──────────────────────
-supplementary/
-
-# ── IDE ────────────────────────────────────────────────────
-.vscode/
-.idea/
-*.swp
-
-# NOTE: Databases (*.db) ARE tracked intentionally
-# so collaborators can access data directly.
-# If DBs grow too large for GitHub (>100MB), move to Git LFS:
-# git lfs track "*.db"
+*.log
+export/csvs/daily_bulletin.txt
+export/csvs/shap_current.csv
+export/csvs/current_alerts.json
+wwi_map.html
+update.log
+supplementary/corine_extract/

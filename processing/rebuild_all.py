@@ -1,12 +1,19 @@
-from pathlib import Path
-ROOT = Path(__file__).parent.parent
-DB_SPW = str(ROOT / "export/databases/spw_liege.db")
 """
 rebuild_all.py — WWI materialized indicators
 Waits for DB lock to clear, then runs everything in one connection.
 """
+
+#from config import DB_SPW
+
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent
+DB_SPW = str(ROOT / "export/databases/spw_liege.db")
+
 import sqlite3, time, logging, os, sys
+from pathlib import Path
 from pyproj import Transformer
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -133,9 +140,12 @@ CREATE TABLE t_latest_Q AS
 SELECT o.station_no, o.value AS discharge_m3s, o.timestamp
 FROM observations o
 WHERE o.parameter = 'Q'
+  AND o.value IS NOT NULL
   AND o.timestamp = (
       SELECT MAX(o2.timestamp) FROM observations o2
-      WHERE o2.station_no = o.station_no AND o2.parameter = 'Q'
+      WHERE o2.station_no = o.station_no
+        AND o2.parameter = 'Q'
+        AND o2.value IS NOT NULL
   )
 """)
 con.execute("CREATE INDEX idx_tlQ ON t_latest_Q(station_no)")
@@ -244,3 +254,29 @@ for r in con.execute("""
 con.close()
 log.info(f"\n✓ All done in {elapsed()}")
 log.info("Next: python build_map.py")
+
+#from pathlib import Path
+##DB_SPW = str(ROOT / "export/databases/spw_liege.db")
+
+"""
+rebuild_all.py — WWI materialized indicators
+Waits for DB lock to clear, then runs everything in one connection.
+"""
+import sqlite3, time, logging, os, sys
+from pyproj import Transformer
+
+
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s  %(message)s",
+    datefmt="%H:%M:%S",
+)
+log = logging.getLogger(__name__)
+T0 = time.time()
+
+def elapsed():
+    return f"{time.time()-T0:.1f}s"
+
+DB = str(DB_SPW)

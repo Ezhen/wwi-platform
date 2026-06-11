@@ -14,10 +14,7 @@ import logging
 from pathlib import Path
 from datetime import datetime, timezone
 
-
-
-
-ROOT = Path(__file__).resolve().parent
+ROOT   = Path(__file__).parent
 DB_SPW = str(ROOT / "export/databases/spw_liege.db")
 DB_FC  = str(ROOT / "export/databases/forecast_liege.db")
 
@@ -121,6 +118,20 @@ def load_current_state(con_spw, con_fc):
     return state
 
 
+def _slope_context(slopes, station_nos):
+    """Return slope-informed response time context string."""
+    if not slopes:
+        return ""
+    fast = [slopes[s]["label"] if "label" in slopes.get(s,{})
+            else s
+            for s in station_nos
+            if slopes.get(s, {}).get("slope", 0) > 10]
+    if fast:
+        return (f"Steep headwater catchments (>10°) indicate "
+                f"rapid runoff response expected within 6h.")
+    return ""
+
+
 def evaluate_alerts(state):
     """
     Evaluate multi-signal composite alert conditions.
@@ -174,7 +185,8 @@ def evaluate_alerts(state):
                 f"Sustained low-flow condition. "
                 f"Baseflow drainage without rainfall replenishment. "
                 f"Estimated {sustained_days} more days below threshold "
-                f"if no significant rainfall."
+                f"if no significant rainfall. "
+                + _slope_context(slopes, ["5826","5904"])
             ),
             "operational": (
                 "Review minimum flow abstraction permits. "
@@ -202,7 +214,8 @@ def evaluate_alerts(state):
                 "Rapid rise on saturated catchment. "
                 "High flood risk — soil moisture at capacity, "
                 "additional rainfall converts directly to runoff. "
-                "July 2021 type precursor pattern if forecast rainfall verifies."
+                "July 2021 type precursor pattern if forecast rainfall verifies. "
+                + _slope_context(slopes, ["6387","6228","6958"])
             ),
             "operational": (
                 "ELEVATED flood risk. Activate monitoring protocol. "
@@ -423,7 +436,20 @@ if __name__ == "__main__":
     con_fc  = sqlite3.connect(DB_FC,  timeout=30) \
               if Path(DB_FC).exists() else None
 
+    # Load catchment slopes
+    slopes = {}
+    db_catch = str(ROOT / "export/databases/catchments_liege.db")
+    if Path(db_catch).exists():
+        con_c = sqlite3.connect(db_catch)
+        for r in con_c.execute("""
+            SELECT station_no, mean_slope_deg, response_class
+            FROM catchments WHERE mean_slope_deg IS NOT NULL
+        """):
+            slopes[r[0]] = {"slope": r[1], "response": r[2]}
+        con_c.close()
+
     state  = load_current_state(con_spw, con_fc)
+    state["slopes"] = slopes
     alerts = evaluate_alerts(state)
 
     print_alerts(alerts, state)
@@ -442,12 +468,12 @@ if __name__ == "__main__":
     }
 
     # Always-current file (read by llm_bulletin.py)
-    out_current = ROOT / "wwi" / "export" / "csvs" / "current_alerts.json"
+    out_current = ROOT / "export" / "csvs" / "current_alerts.json"
     with open(out_current, "w") as f:
         json.dump(payload, f, indent=2)
 
     # Timestamped archive (historical record)
-    archive_dir = ROOT / "wwi" / "export" / "csvs" / "archive"
+    archive_dir = ROOT / "export" / "csvs" / "archive"
     archive_dir.mkdir(parents=True, exist_ok=True)
     ts_str = datetime.now().strftime("%Y%m%d_%H%M")
     out_archive = archive_dir / f"alerts_{ts_str}.json"

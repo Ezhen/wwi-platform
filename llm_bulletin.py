@@ -188,7 +188,7 @@ from datetime import date as _date
 
 
 
-archive_dir = ROOT / "wwi" / "export" / "csvs" / "archive"
+archive_dir = ROOT / "export" / "csvs" / "archive"
 archive_dir.mkdir(parents=True, exist_ok=True)
 ts_str = datetime.now().strftime("%Y%m%d")
 archive_path = str(archive_dir / f"bulletin_{ts_str}.txt")
