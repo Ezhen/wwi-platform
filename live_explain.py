@@ -13,10 +13,10 @@ warnings.filterwarnings("ignore")
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 
-ROOT    = Path(__file__).parent.parent
-DB_SPW  = str(ROOT / "wwi/export/databases/spw_liege.db")
-DB_HIST = str(ROOT / "wwi/export/databases/historical_liege.db")
-CSV_FEATURES = str(ROOT / "wwi/export/csvs/features_sauheid.csv")
+ROOT    = Path(__file__).parent if Path(__file__).parent.name == 'wwi' else Path(__file__).parent.parent
+DB_SPW  = str(ROOT / "export/databases/spw_liege.db")
+DB_HIST = str(ROOT / "export/databases/historical_liege.db")
+CSV_FEATURES = str(ROOT / "export/csvs/features_sauheid.csv")
 
 TODAY = datetime.now(timezone.utc).date()
 print("=" * 60)
@@ -112,24 +112,36 @@ def get_live_precip_sum(station_no, n_days):
     con.close()
     return row[0] if row and row[0] else 0.0
 
-# Use correct gauge-relative H from feature CSV (last known good values)
-# t_latest_H has NGF absolute elevations — unit mismatch with training data
-# TODO: fix ingest to store Value (relative) not Absolute Value for H
-yesterday_row = df_hist[FEATURE_COLS].dropna().iloc[-1]
+# Read H directly from live DB — ingest now uses Value (gauge-relative)
+def get_live_H_from_db(station_no):
+    con = sqlite3.connect(DB_SPW)
+    row = con.execute("""
+        SELECT level_m FROM t_latest_H
+        WHERE station_no=? AND level_m IS NOT NULL AND level_m < 10
+    """, (station_no,)).fetchone()
+    if row:
+        con.close()
+        return float(row[0])
+    row = con.execute("""
+        SELECT value FROM observations
+        WHERE station_no=? AND parameter='H'
+          AND value IS NOT NULL AND value < 10
+        ORDER BY timestamp DESC LIMIT 1
+    """, (station_no,)).fetchone()
+    con.close()
+    return float(row[0]) if row else None
 
-H_now        = float(yesterday_row["H"])
-H_chaudf     = float(yesterday_row["H_chaudf"])
-H_eupen      = float(yesterday_row["H_eupen"])   if "H_eupen" in yesterday_row.index else None
-H_stavelot   = float(yesterday_row["H_stavelot"])
-H_troisponts = float(yesterday_row["H_troisponts"])
-H_comblain   = float(yesterday_row["H_comblain"])
-H_huy        = float(yesterday_row["H_huy"])
-
-# Live Q and Precip are correctly stored (not affected by units issue)
-Q_now        = get_live_Q("5826")           # SAUHEID Q — live
-Q_chaudf     = get_live_Q("6228")           # CHAUDFONTAINE Q — live
-
-print(f"  NOTE: H values from last CSV date ({df_hist[FEATURE_COLS].dropna().index[-1].date()})")
+H_now        = get_live_H_from_db('5826')
+H_chaudf     = get_live_H_from_db('6228')
+H_eupen      = get_live_H_from_db('6387')
+H_stavelot   = get_live_H_from_db('6732')
+H_troisponts = get_live_H_from_db('6832')
+H_comblain   = get_live_H_from_db('5904')
+H_huy        = get_live_H_from_db('7141')
+Q_now        = get_live_Q('5826')
+Q_chaudf     = get_live_Q('6228')
+yesterday_row = df_hist[FEATURE_COLS].dropna().iloc[-1].copy()
+print(f"  H from live DB (gauge-relative)")
 print(f"        Q and Precip from live DB ({TODAY})")
 
 P_ourthe_1d  = get_live_precip_sum("6657",  1)
@@ -301,13 +313,43 @@ print(f"""
 ╚══════════════════════════════════════════════════════════╝
 """)
 
+# Log forecast for verification tomorrow
+forecast_log = ROOT / "export" / "csvs" / "forecast_log.csv"
+import csv, os
+log_row = {
+    "issued_date":    str(TODAY),
+    "target_date_t1": str(TODAY + pd.Timedelta(days=1)),
+    "target_date_t2": str(TODAY + pd.Timedelta(days=2)),
+    "target_date_t3": str(TODAY + pd.Timedelta(days=3)),
+    "H_current":      round(H_now, 4),
+    "H_pred_t1":      round(H_pred, 4),
+    "H_pred_t2":      round(H_pred2, 4),
+    "H_pred_t3":      round(H_pred3, 4),
+    "delta_t1":       round(delta, 4),
+    "risk_level":     risk,
+}
+write_header = not forecast_log.exists()
+with open(str(forecast_log), "a", newline="") as f:
+    writer = csv.DictWriter(f, fieldnames=log_row.keys())
+    if write_header:
+        writer.writeheader()
+    writer.writerow(log_row)
+print(f"Forecast logged → {forecast_log}")
+
 # Save SHAP
 shap_export = pd.DataFrame({
     "feature": FEATURE_COLS,
     "shap_value": shap_vals[0],
     "feature_val": X_now.values[0],
 }).sort_values("shap_value", ascending=False)
-out = str(ROOT / "wwi/export/csvs/shap_current.csv")
+out = str(ROOT / "export/csvs/shap_current.csv")
 shap_export.to_csv(out, index=False)
+# Timestamped archive
+archive_dir = ROOT / "export" / "csvs" / "archive"
+archive_dir.mkdir(parents=True, exist_ok=True)
+ts_str = datetime.now().strftime("%Y%m%d")
+shap_archive = str(archive_dir / f"shap_{ts_str}.csv")
+shap_export.to_csv(shap_archive, index=False)
 print(f"SHAP saved → {out}")
+print(f"SHAP archived → {shap_archive}")
 print("Next: python llm_bulletin.py")

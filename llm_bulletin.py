@@ -6,16 +6,17 @@ Output: human-readable bulletin for water managers.
 """
 
 import json
+from datetime import datetime
 import sqlite3
 import pandas as pd
 import requests
 from pathlib import Path
 from datetime import date
 
-ROOT         = Path(__file__).parent.parent
-SHAP_CSV     = str(ROOT / "wwi/export/csvs/shap_current.csv")
-DB_FORECAST  = str(ROOT / "wwi/export/databases/forecast_liege.db")
-OUT_BULLETIN = str(ROOT / "wwi/export/csvs/daily_bulletin.txt")
+ROOT = Path(__file__).resolve().parent
+SHAP_CSV     = str(ROOT / "export/csvs/shap_current.csv")
+DB_FORECAST  = str(ROOT / "export/databases/forecast_liege.db")
+OUT_BULLETIN = str(ROOT / "export/csvs/daily_bulletin.txt")
 
 TODAY = date.today().isoformat()
 
@@ -178,7 +179,21 @@ Model: RF-deltaH · NSE=0.953 (24h) · Explained by SHAP
 Data: SPW Hydrométrie · Open-Meteo · ERA5 (Copernicus)
 """
 
+# Always-current file
 with open(OUT_BULLETIN, "w") as f:
     f.write(full_output)
 
+# Timestamped archive
+from datetime import date as _date
+
+
+
+archive_dir = ROOT / "wwi" / "export" / "csvs" / "archive"
+archive_dir.mkdir(parents=True, exist_ok=True)
+ts_str = datetime.now().strftime("%Y%m%d")
+archive_path = str(archive_dir / f"bulletin_{ts_str}.txt")
+with open(archive_path, "w") as f:
+    f.write(full_output)
+
 print(f"\n✓ Bulletin saved → {OUT_BULLETIN}")
+print(f"✓ Archived      → {archive_path}")
