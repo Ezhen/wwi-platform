@@ -1,0 +1,47 @@
+"""Rewrite model_versions.csv with clean canonical history."""
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+OUT  = str(ROOT / "export/csvs/model_versions.csv")
+
+rows = [
+    # version, description, resolution, test_NSE, flood_NSE, horizon, delta_test, delta_flood, date, note
+    ["v1.0", "Baseline RF absolute H",
+     "daily", 0.953, 0.506, "t+24h", "+0.000", "+0.000", "2026-06-08",
+     "Starting point"],
+
+    ["v1.1", "RF delta-H formulation",
+     "daily", 0.974, 0.670, "t+24h", "+0.021", "+0.164", "2026-06-08",
+     "Key structural fix — predict change not level"],
+
+    ["v1.2", "delta-H + swvl1 + NDVI + ERA5 2021",
+     "daily", 0.975, 0.671, "t+24h", "+0.001", "+0.001", "2026-06-11",
+     "Soil moisture adds nothing at daily resolution"],
+
+    ["v1.3", "v1.2 + CORINE fractions + watershed slope",
+     "daily", 0.975, 0.670, "t+24h", "+0.000", "+0.000", "2026-06-11",
+     "Static spatial features add nothing daily — model ceiling confirmed"],
+
+    ["hourly_v1", "RF delta-H hourly — t+6h horizon",
+     "hourly", 0.998, 0.981, "t+6h",  "+0.023", "+0.311", "2026-06-11",
+     "Wave propagation lag explicit — dominant feature H_stavelot_dH12h"],
+
+    ["hourly_v1", "RF delta-H hourly — t+12h horizon",
+     "hourly", 0.988, 0.878, "t+12h", "+0.013", "+0.208", "2026-06-11",
+     "12h flood warning horizon"],
+
+    ["hourly_v1", "RF delta-H hourly — t+24h horizon",
+     "hourly", 0.935, 0.603, "t+24h", "-0.040", "-0.067", "2026-06-11",
+     "Comparable to daily at 24h — advantage is shorter horizons"],
+]
+
+header = ("version,description,resolution,test_NSE,flood_NSE,"
+          "horizon,delta_test,delta_flood,date,note\n")
+
+with open(OUT, "w") as f:
+    f.write(header)
+    for r in rows:
+        f.write(",".join(str(x) for x in r) + "\n")
+
+print("✓ Written:")
+print(open(OUT).read())

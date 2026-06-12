@@ -131,7 +131,8 @@ for dt in obs_df.index:
     H_fc_t1 = None
     if len(forecast_df) > 0 and dt in forecast_df.index:
         val = forecast_df.loc[dt, "H_forecast_t1"]
-        H_fc_t1 = float(val) if pd.notna(val) else None
+        val_scalar = val.iloc[0] if hasattr(val, "iloc") else val
+        H_fc_t1 = float(val_scalar) if pd.notna(val_scalar) else None
 
     # Persistence forecast (yesterday's H)
     H_pers = float(obs_df.loc[dt_minus1, "H_mean"]) \

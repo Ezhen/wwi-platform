@@ -92,13 +92,23 @@ def load_current_state(con_spw, con_fc):
 
     # Upstream state
     upstream = con_spw.execute("""
-        SELECT station_no, level_m, tendency
+        SELECT station_no, level_m, tendency,
+               delta_1h_m, delta_3h_m, delta_6h_m
         FROM t_flood_context
         WHERE station_no IN ('6387','6228','6732','6832','5904')
         ORDER BY station_no
     """).fetchall()
-    state["upstream"] = {r[0]: {"H": r[1], "tendency": r[2]}
-                         for r in upstream}
+    state["upstream"] = {r[0]: {
+        "H": r[1], "tendency": r[2],
+        "dH1h": r[3], "dH3h": r[4], "dH6h": r[5],
+    } for r in upstream}
+
+    # Check for upstream RISING_FAST stations
+    upstream_rising_fast = [
+        sno for sno, info in state["upstream"].items()
+        if info.get("tendency") in ("RISING_FAST",)
+    ]
+    state["upstream_rising_fast"] = upstream_rising_fast
 
     # Forecast
     if con_fc:
@@ -192,6 +202,38 @@ def evaluate_alerts(state):
                 "Review minimum flow abstraction permits. "
                 "Flag to water utility planning for summer outlook. "
                 "No operational restrictions yet but monitor daily."
+            ),
+        })
+
+
+    # ── UPSTREAM RAPID RISE — early warning ──────────────────────────────────────
+    upstream_rf = state.get('upstream_rising_fast', [])
+    UPSTREAM_NAMES = {
+        '6732': 'STAVELOT (Amblève)', '6387': 'EUPEN (Vesdre)',
+        '6832': 'TROIS-PONTS (Salm)', '5904': 'COMBLAIN (Ourthe)',
+        '6228': 'CHAUDFONTAINE (Vesdre)',
+    }
+    if upstream_rf and H < T['H_elevated']:
+        rf_names = [UPSTREAM_NAMES.get(s, s) for s in upstream_rf]
+        rf_dH    = [state['upstream'][s].get('dH6h') or 0 for s in upstream_rf]
+        alerts.append({
+            'code':     'UPSTREAM_RAPID_RISE',
+            'severity': 'WATCH',
+            'signals':  [
+                f"Upstream RISING_FAST: {', '.join(rf_names)}",
+                f"ΔH/6h upstream: {[f'{d:+.3f}m' for d in rf_dH]}",
+                f"Sauheid currently: H={H:.3f}m (stable)",
+                'Expected wave arrival at Sauheid: 6-18h',
+            ],
+            'interpretation': (
+                f"Rapid rise detected upstream ({', '.join(rf_names)}). "
+                f"Wave propagation to Sauheid: 6-18h. "
+                f"Sauheid currently stable — pre-emptive watch recommended."
+            ),
+            'operational': (
+                'Monitor Sauheid hourly. Run live_explain_hourly.py for t+6h/12h. '
+                'Alert downstream operators (HUY, LIÈGE). '
+                'Check Open-Meteo for additional rainfall forecast.'
             ),
         })
 

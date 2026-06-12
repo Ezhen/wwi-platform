@@ -25,3 +25,5 @@ run "4/5" "Rebuild indicators"  "processing/rebuild_all.py"
 run "5/5" "Build map"           "visualisation/build_map.py"
 
 echo "✓ Done — $(date '+%H:%M:%S')" | tee -a "$LOG_FILE"
+
+0 0,6,12,18 * * * cd /home/users/e/i/eivanov/wwi && bash update.sh >> update.log 2>&1
