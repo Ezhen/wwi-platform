@@ -24,24 +24,24 @@ OUT_FILE = str(ROOT / "export/maps/network_error_map.png")
 # (station_no, label, river, lon, lat, river_km)
 NETWORK = [
     # Salm
-    ("6832", "TROIS-PONTS",    "Salm",    5.863, 50.368,  0),
+    ("6832", "TROIS-PONTS",    "Salm",    5.876, 50.364,  0),
     # Amblève
-    ("6529", "MONT-RIGI",      "Amblève", 6.097, 50.497,  5),
-    ("6732", "STAVELOT",       "Amblève", 5.930, 50.390, 20),
+    ("6529", "MONT-RIGI",      "Amblève", 6.073, 50.511,  5),
+    ("6732", "STAVELOT",       "Amblève", 5.885, 50.378, 20),
     ("6671", "TARGNON",        "Amblève", 5.771, 50.390, 30),
-    ("6657", "REMOUCHAMPS",    "Amblève", 5.686, 50.490, 50),
+    ("6657", "REMOUCHAMPS",    "Amblève", 5.705, 50.521, 50),
     # Vesdre
-    ("6958", "ROBERTVILLE",    "Vesdre",  6.096, 50.445,  5),
-    ("6387", "EUPEN",          "Vesdre",  6.048, 50.640, 20),
+    ("6958", "ROBERTVILLE",    "Vesdre",  6.109, 50.452,  5),
+    ("6387", "EUPEN",          "Vesdre",  6.038, 50.623, 20),
     ("6353", "DOLHAIN",        "Vesdre",  5.814, 50.597, 42),
-    ("6228", "CHAUDFONTAINE",  "Vesdre",  5.638, 50.583, 68),
+    ("6228", "CHAUDFONTAINE",  "Vesdre",  5.654, 50.589, 68),
     # Ourthe
-    ("5904", "COMBLAIN",       "Ourthe",  5.578, 50.472, 25),
-    ("5826", "SAUHEID",        "Ourthe",  5.530, 50.590, 48),
-    ("5806", "ANGLEUR",        "Ourthe",  5.573, 50.607, 55),
+    ("5904", "COMBLAIN",       "Ourthe",  5.583, 50.486, 25),
+    ("5826", "SAUHEID",        "Ourthe",  5.591, 50.597, 48),
+    ("5806", "ANGLEUR",        "Ourthe",  5.611, 50.613, 55),
     # Meuse
-    ("7141", "HUY",            "Meuse",   5.239, 50.519, 20),
-    ("7133", "NEUVILLE",       "Meuse",   5.573, 50.640, 48),
+    ("7141", "HUY",            "Meuse",   5.234, 50.516, 20),
+    ("7133", "NEUVILLE",       "Meuse",   5.309, 50.532, 48),
     ("5757", "LANAYE",         "Meuse",   5.638, 50.730, 70),
     # Mehaigne
     ("5578", "WAREMME",        "Méhaigne",5.256, 50.697,  5),
@@ -144,12 +144,18 @@ if ver_log.exists():
 
 # For all other stations — compute persistence error (baseline) from recent obs
 con = sqlite3.connect(DB_SPW)
+_con_tend = sqlite3.connect(DB_SPW)
+tendencies = {r[0]: r[1] for r in _con_tend.execute(
+    "SELECT station_no, tendency FROM t_rise_rate WHERE tendency IS NOT NULL"
+).fetchall()}
+_con_tend.close()
+
 for sno, label, river, lon, lat, km in NETWORK:
     rows = con.execute("""
         SELECT timestamp, value FROM observations
         WHERE station_no=? AND parameter='H'
           AND value IS NOT NULL AND value < 10
-          AND timestamp >= datetime('now','-4 days')
+          AND timestamp >= datetime('now','-7 days')
         ORDER BY timestamp
     """, (sno,)).fetchall()
 
@@ -161,24 +167,40 @@ for sno, label, river, lon, lat, km in NETWORK:
         s.index = s.index.tz_localize(None)
         s = s[~s.index.duplicated()].resample("1h").mean().dropna()
 
-        # Persistence error = |H(t) - H(t-24h)|
-        pers_err = (s - s.shift(24)).abs().dropna()
-        if len(pers_err) > 0:
+        # Skill = 1 - RMSE_model / RMSE_persistence
+        # For non-model stations: skill vs climatological mean (naive)
+        pers_err  = (s - s.shift(24)).abs().dropna()
+        mean_err  = (s - s.mean()).abs().dropna()
+        rmse_pers = float(pers_err.std()) if len(pers_err) > 0 else None
+        rmse_mean = float(mean_err.std()) if len(mean_err) > 0 else None
+
+        if pers_err.mean() > 0:
             errors[sno] = {
                 "label":      label,
                 "river":      river,
                 "lon":        lon,
                 "lat":        lat,
                 "mean_err":   float(pers_err.mean()),
-                "max_err":    float(pers_err.max()),
+                "p90_err":    float(pers_err.quantile(0.90)),
                 "H_current":  float(s.iloc[-1]) if len(s) else None,
+                "H_min":      float(s.min()),
+                "H_max":      float(s.max()),
+                "dH_7d":      float(s.iloc[-1] - s.iloc[0]) if len(s) > 1 else None,
+                "skill":      None,
+                "tendency":   tendencies.get(sno, "—"),
                 "type":       "persistence",
             }
 
-# Override Sauheid with actual model error
+# Override Sauheid with actual model error + real skill
 if sauheid_error and "5826" in errors:
-    errors["5826"]["mean_err"] = sauheid_error
+    pers_rmse = errors["5826"].get("mean_err", 0.08)
+    # Real skill: RF model vs persistence on same 3-day window
+    model_skill = round(1 - (sauheid_error / pers_rmse), 3) if pers_rmse > 0 else None
+    errors["5826"]["model_rmse"] = sauheid_error  # RF model error — keep mean_err as persistence
+    errors["5826"]["skill"]    = model_skill
     errors["5826"]["type"]     = "RF-deltaH model"
+    print(f"  SAUHEID pers={errors['5826']['mean_err']*100:.1f}cm  RF={sauheid_error*100:.1f}cm")
+    print(f"  SAUHEID skill vs persistence: {model_skill:+.3f}")
 
 con.close()
 
@@ -194,7 +216,7 @@ for sno in all_snos:
         SELECT timestamp, value FROM observations
         WHERE station_no=? AND parameter='H'
           AND value IS NOT NULL AND value < 10
-          AND timestamp >= datetime('now','-4 days')
+          AND timestamp >= datetime('now','-7 days')
         ORDER BY timestamp
     """, (sno,)).fetchall()
     if len(rows) > 12:
@@ -235,12 +257,12 @@ except ImportError:
 LON_MIN, LON_MAX = 4.90, 6.35
 LAT_MIN, LAT_MAX = 50.20, 50.85
 
-fig = plt.figure(figsize=(16, 11), dpi=150)
+fig = plt.figure(figsize=(18, 14), dpi=150)
 fig.patch.set_facecolor("#f0f4f8")
 
 if HAS_CARTOPY:
     proj = ccrs.PlateCarree()
-    ax   = fig.add_subplot(111, projection=proj)
+    ax   = fig.add_subplot(211, projection=proj)
     ax.set_extent([LON_MIN, LON_MAX, LAT_MIN, LAT_MAX], crs=proj)
     ax.add_feature(cfeature.BORDERS.with_scale("10m"),
                    linewidth=0.6, color="#999", zorder=2)
@@ -254,7 +276,7 @@ if HAS_CARTOPY:
     gl.ylabel_style = {"size": 7}
     transform = proj
 else:
-    ax = fig.add_subplot(111)
+    ax = fig.add_subplot(211)
     ax.set_xlim(LON_MIN, LON_MAX)
     ax.set_ylim(LAT_MIN, LAT_MAX)
     ax.set_facecolor("#f5f0e8")
@@ -335,21 +357,26 @@ for rname, (rlon, rlat, angle) in river_label_pos.items():
                 fontstyle="italic", fontweight="bold",
                 alpha=0.8, rotation=angle, zorder=4)
 
-# Colormap for errors
-err_vals = [e["mean_err"] for e in errors.values() if e["mean_err"] is not None]
-if err_vals:
+# Colormap for SKILL score (green=good, red=worse than persistence)
+skill_vals = [e.get("skill") for e in errors.values() if e.get("skill") is not None]
+err_vals   = [e["mean_err"] for e in errors.values() if e.get("mean_err") is not None]
+if skill_vals:
     vmin = 0
-    vmax = max(err_vals) * 1.1
+    vmax = max(err_vals) * 1.1 if err_vals else 0.2
     norm  = mcolors.Normalize(vmin=vmin, vmax=vmax)
     cmap  = cm.RdYlGn_r  # green=low error, red=high error
+else:
+    vmin, vmax = 0, 0.2
+    norm = mcolors.Normalize(vmin=vmin, vmax=vmax)
+    cmap = cm.RdYlGn_r
 
-# Plot ALL background stations — small dots, colour only, no labels
+# Plot ALL background stations — small dots coloured by skill
 if all_errors:
-    all_lons = [v["lon"] for v in all_errors.values()]
-    all_lats = [v["lat"] for v in all_errors.values()]
-    all_errs = [v["mean_err"] for v in all_errors.values()]
+    all_lons   = [v["lon"] for v in all_errors.values()]
+    all_lats   = [v["lat"] for v in all_errors.values()]
+    all_errs2 = [v.get("mean_err", 0) for v in all_errors.values()]
     scatter(ax, all_lons, all_lats,
-            s=36, c=all_errs,
+            s=18, c=all_errs2,
             cmap=cmap, norm=norm,
             zorder=5, edgecolors="#555",
             linewidths=0.3, alpha=0.75)
@@ -359,22 +386,30 @@ for sno, e in errors.items():
     lon, lat = e["lon"], e["lat"]
     err  = e["mean_err"]
     H    = e["H_current"]
-    color = cmap(norm(err)) if err_vals else "#888"
+    err   = e.get("mean_err", 0)
+    skill = e.get("skill")
+    color = cmap(norm(err)) if err_vals else "#aaa"
 
-    # Station dot — size proportional to current H
-    size = 80 + (H or 0.5) * 120
-    scatter(ax, [lon], [lat], s=size, c=[color],
-            cmap=None, norm=None,
-            zorder=6, edgecolors="#333", linewidths=0.8)
+    # Sauheid — star marker, thick black border
+    if sno == "5826":
+        scatter(ax, [lon], [lat], s=280, c=[color],
+                cmap=None, norm=None, marker="*",
+                zorder=8, edgecolors="#000", linewidths=1.5)
+    else:
+        size = 80 + (H or 0.5) * 120
+        scatter(ax, [lon], [lat], s=size, c=[color],
+                cmap=None, norm=None,
+                zorder=6, edgecolors="#333", linewidths=0.8)
 
     # Label
-    h_str = f"{H:.2f}m" if H else ""
-    err_str = f"{err*100:.1f}cm"
-    label_text = f"{e['label']}\n{h_str} | err~{err_str}"
+    h_str   = f"{H:.2f}m" if H else ""
+    err_str = f"err~{err*100:.1f}cm" if err else ""
+    sk_str  = f" sk={skill:+.2f}" if skill is not None else ""
+    label_text = f"{e['label']}\n{h_str} | {err_str}{sk_str}"
 
     # Offset labels to avoid overlap
     offsets = {
-        "5826": (6, -12),   # SAUHEID
+        "5826": (-8, -12), # SAUHEID
         "7133": (6,   6),   # NEUVILLE
         "6228": (-8, -12),  # CHAUDFONTAINE
         "6387": (6,   6),   # EUPEN
@@ -418,7 +453,7 @@ if err_vals:
                         orientation="vertical",
                         fraction=0.025, pad=0.02,
                         shrink=0.6)
-    cbar.set_label("Mean |error| / persistence (m)\nlast 3 days",
+    cbar.set_label("Mean |error| last 7 days (m)\nCaption: err=abs error · sk=skill vs persistence",
                    fontsize=8)
     cbar.ax.tick_params(labelsize=7)
     cbar.set_ticks([0, 0.02, 0.05, 0.10, 0.20])
@@ -435,11 +470,11 @@ ax.legend(handles=legend_elements,
           framealpha=0.9, title="Rivers", title_fontsize=8)
 
 # Model note
-note = ("● Station size = current H level\n"
-        "● Colour = mean forecast error (3-day)\n"
-        "● Green = low error  |  Red = high error\n"
-        "● SAUHEID: RF-deltaH model error\n"
-        "● Others: persistence baseline")
+note = ("\u2605 SAUHEID: RF-deltaH model (NSE=0.981 flood 2021)\n"
+        "\u25cf All other stations: persistence benchmark only\n"
+        "\u25cf Size = current H level\n"
+        "\u25cf Colour = mean |error| last 7 days\n"
+        "\u25cf Green = low error  \u00b7  Red = high error")
 if HAS_CARTOPY:
     ax.text(0.01, 0.98, note,
             transform=ax.transAxes,
@@ -455,14 +490,121 @@ else:
                       edgecolor="#ccc"))
 
 ax.set_title(
-    f"Liège Basin — River Network & Forecast Error Map\n"
-    f"Mean |error| last 3 days · "
+    f"Liège Basin — River Network Reliability Map\n"
+    f"Current state · Prediction uncertainty · "
     f"Generated {datetime.now().strftime('%Y-%m-%d %H:%M')}",
     fontsize=11, pad=8
 )
 
-plt.tight_layout()
+# ── Metrics table below map ───────────────────────────────────────────────────
+ax_table = fig.add_subplot(212)
+ax_table.set_facecolor("#f9f9f7")
+ax_table.axis("off")
+
+# Build table rows sorted by river then downstream
+HYDRO_ORDER_TABLE = [
+    # river,       sno,    label,           km
+    ("Salm",       "6832", "TROIS-PONTS",    0),
+    ("Amblève",    "6529", "MONT-RIGI",      5),
+    ("Amblève",    "6732", "STAVELOT",      20),
+    ("Amblève",    "6671", "TARGNON",       30),
+    ("Amblève",    "6657", "REMOUCHAMPS",   50),
+    ("Vesdre",     "6958", "ROBERTVILLE",    5),
+    ("Vesdre",     "6387", "EUPEN",         20),
+    ("Vesdre",     "6353", "DOLHAIN",       42),
+    ("Vesdre",     "6228", "CHAUDFONTAINE", 68),
+    ("Ourthe",     "5904", "COMBLAIN",      25),
+    ("Ourthe",     "5826", "SAUHEID ★",     48),
+    ("Ourthe",     "5806", "ANGLEUR",       55),
+    ("Meuse",      "7141", "HUY",           20),
+    ("Meuse",      "7133", "NEUVILLE",      48),
+    ("Méhaigne",   "5578", "WAREMME",        5),
+]
+
+table_rows = []
+for river, sno, label, km in HYDRO_ORDER_TABLE:
+    e = errors.get(sno) or all_errors.get(sno)
+    if not e:
+        continue
+    H_curr   = e.get("H_current")
+    mean_err = e.get("mean_err")
+    skill    = e.get("skill")
+    model    = "RF-deltaH" if sno == "5826" else "Persistence"
+    H_curr   = e.get("H_current")
+    H_min    = e.get("H_min")
+    H_max    = e.get("H_max")
+    mean_err = e.get("mean_err")
+    p90_err  = e.get("p90_err")
+    dH_7d    = e.get("dH_7d")
+    tend     = e.get("tendency", "—")
+
+    H_str    = f"{H_curr:.3f}" if H_curr is not None else "—"
+    range_str= f"{H_min:.2f}–{H_max:.2f}" if H_min is not None else "—"
+    dH_str   = f"{dH_7d:+.3f}" if dH_7d is not None else "—"
+    err_str  = f"{mean_err*100:.1f}cm" if mean_err else "—"
+    p90_str  = f"{p90_err*100:.1f}cm" if p90_err else "—"
+
+    model_note = f" RF={e.get('model_rmse',0)*100:.1f}cm" if e.get('model_rmse') else ""
+    table_rows.append([river, label, km,
+                       H_str, range_str, dH_str,
+                       err_str, p90_str,
+                       tend + model_note])
+
+col_labels = ["River", "Station", "km",
+              "H now (m)", "7d range (m)", "ΔH 7d (m)",
+              "Mean err", "P90 err", "Tendency"]
+
+if table_rows:
+    tbl = ax_table.table(
+        cellText=table_rows,
+        colLabels=col_labels,
+        cellLoc="center",
+        loc="center",
+        bbox=[0, 0, 1, 1]
+    )
+    tbl.auto_set_font_size(False)
+    tbl.set_fontsize(7.5)
+    # Tighten row heights
+    for (row, col), cell in tbl.get_celld().items():
+        cell.set_height(0.055)  # compact rows
+
+    # Style
+    river_colors = {
+        "Meuse":    "#dce9f5",
+        "Ourthe":   "#dcf5e8",
+        "Amblève":  "#f5f5dc",
+        "Vesdre":   "#f0dcf5",
+        "Salm":     "#dcf5f0",
+        "Méhaigne": "#f5e8dc",
+    }
+    for (row, col), cell in tbl.get_celld().items():
+        if row == 0:
+            cell.set_facecolor("#2c3e50")
+            cell.set_text_props(color="white", fontweight="bold")
+        elif row > 0 and row <= len(table_rows):
+            river = table_rows[row-1][0]
+            cell.set_facecolor(river_colors.get(river, "#f9f9f7"))
+            if table_rows[row-1][1] == "SAUHEID ★":
+                cell.set_facecolor("#fffde7")
+        cell.set_edgecolor("#ddd")
+
+    ax_table.set_title(
+        "Station metrics — sorted by river and downstream position",
+        fontsize=9, pad=6
+    )
+
+plt.tight_layout(h_pad=1.5)
+fig.subplots_adjust(hspace=0.08)
+# Save with date marker
+date_str  = datetime.now().strftime("%Y%m%d")
+dated_file = str(OUT_FILE).replace(
+    "network_error_map.png",
+    f"network_error_map_{date_str}.png"
+)
 plt.savefig(OUT_FILE, dpi=150, bbox_inches="tight",
+            facecolor=fig.get_facecolor())
+plt.savefig(dated_file, dpi=150, bbox_inches="tight",
             facecolor=fig.get_facecolor())
 plt.close()
 print(f"\n✓ Saved → {OUT_FILE}")
+print(f"✓ Dated  → {dated_file}")

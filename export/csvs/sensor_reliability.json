@@ -1,0 +1,54 @@
+{
+  "generated": "2026-06-13",
+  "n_stations": 98,
+  "grade_A": 69,
+  "grade_B": 4,
+  "grade_C": 24,
+  "grade_D": 0,
+  "grade_F": 1,
+  "offline": [
+    "5804"
+  ],
+  "flatline": [
+    "6526"
+  ],
+  "stale": [],
+  "mean_score": 83.5,
+  "key_stations": {
+    "5826": {
+      "score": 90.0,
+      "grade": "A",
+      "issues": "FLAT_19h"
+    },
+    "6732": {
+      "score": 100.0,
+      "grade": "A",
+      "issues": "OK"
+    },
+    "7141": {
+      "score": 100.0,
+      "grade": "A",
+      "issues": "OK"
+    },
+    "7133": {
+      "score": 100.0,
+      "grade": "A",
+      "issues": "OK"
+    },
+    "5904": {
+      "score": 100.0,
+      "grade": "A",
+      "issues": "OK"
+    },
+    "6387": {
+      "score": 100.0,
+      "grade": "A",
+      "issues": "OK"
+    },
+    "6228": {
+      "score": 100.0,
+      "grade": "A",
+      "issues": "OK"
+    }
+  }
+}

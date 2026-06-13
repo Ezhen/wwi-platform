@@ -22,8 +22,17 @@ run "1/5" "SPW hydrology"       "ingestion/spw_ingest.py"
 run "2/5" "Piezometry"          "ingestion/piez_ingest.py"
 run "3/5" "Forecast"            "ingestion/forecast_ingest.py"
 run "4/5" "Rebuild indicators"  "processing/rebuild_all.py"
-run "5/5" "Build map"           "visualisation/build_map.py"
+run "5/8" "Build map"           "visualisation/build_map.py"
+run "6/8" "Sensor reliability"  "sensor_reliability.py"
+run "7/8" "Daily prediction"    "live_explain.py"
+run "8/8" "Hourly prediction"   "live_explain_hourly.py"
+
+# Alert engine + bulletin (read live state)
+echo "[alerts] Running alert engine..." | tee -a "$LOG_FILE"
+python "$SCRIPT_DIR/build_alerts.py" 2>&1 | tee -a "$LOG_FILE"
+echo "[bulletin] Generating LLM bulletin..." | tee -a "$LOG_FILE"
+python "$SCRIPT_DIR/llm_bulletin.py" 2>&1 | tee -a "$LOG_FILE"
+echo "[verify] Forecast verification..." | tee -a "$LOG_FILE"
+python "$SCRIPT_DIR/forecast_verification.py" 2>&1 | tee -a "$LOG_FILE"
 
 echo "✓ Done — $(date '+%H:%M:%S')" | tee -a "$LOG_FILE"
-
-0 0,6,12,18 * * * cd /home/users/e/i/eivanov/wwi && bash update.sh >> update.log 2>&1
