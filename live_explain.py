@@ -295,7 +295,8 @@ print(f"""
 ╠══════════════════════════════════════════════════════════╣
 ║                                                          
 ║  Current level:    {H_now:.3f} m                           
-║  24h forecast:     {H_pred:.3f} m  ({delta:+.3f} m)                 
+║  24h forecast:     {H_pred:.3f} m  ({delta:+.3f} m)
+
 ║  48h forecast:     {H_pred2:.3f} m  ({delta2:+.3f} m)                
 ║  72h forecast:     {H_pred3:.3f} m  ({delta3:+.3f} m)                
 ║  Tendency:         {tendency:<20}                   

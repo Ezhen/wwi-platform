@@ -23,3 +23,6 @@ wwi_map.html
 update.log
 supplementary/corine_extract/
 supplementary/corine_extract/
+export/databases/*.db-shm
+export/databases/*.db-wal
+export/databases/*.db-journal

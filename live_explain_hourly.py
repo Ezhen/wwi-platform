@@ -75,7 +75,30 @@ for horizon, target in [("t6h","H_t6h"),("t12h","H_t12h"),("t24h","H_t24h")]:
         min_samples_leaf=3, random_state=42, n_jobs=-1
     )
     rf.fit(X_tr_f, y_tr)
-    models[horizon] = {"rf": rf, "med": med}
+    models[horizon] = {"rf": rf, "med": med, "X_tr": X_tr_f, "y_tr": y_tr}
+
+def predict_with_uncertainty(rf, X, H_current, ci=90):
+    """
+    Compute point forecast + prediction interval from RF tree ensemble.
+    Uses per-tree predictions to build empirical distribution.
+    ci: confidence interval width (default 90%)
+    """
+    # Get prediction from every tree
+    tree_preds = np.array([
+        tree.predict(X) for tree in rf.estimators_
+    ])  # shape: (n_trees, n_samples)
+
+    delta_mean = np.mean(tree_preds, axis=0)
+    delta_p5   = np.percentile(tree_preds, (100-ci)/2, axis=0)
+    delta_p95  = np.percentile(tree_preds, 100-(100-ci)/2, axis=0)
+
+    return {
+        "point":  H_current + delta_mean[0],
+        "lower":  H_current + delta_p5[0],
+        "upper":  H_current + delta_p95[0],
+        "delta":  delta_mean[0],
+        "spread": delta_p95[0] - delta_p5[0],  # interval width
+    }
 
 log.info(f"  Models trained: {list(models.keys())}")
 
@@ -210,16 +233,18 @@ H_current = H_now.get("5826") or 0.0
 
 predictions = {}
 for horizon, m in models.items():
-    # Align feature vector to training columns
     X_live = pd.DataFrame([fvec], columns=FEATURE_COLS)
     X_live = X_live.fillna(m["med"])
 
-    delta  = float(m["rf"].predict(X_live)[0])
-    H_pred = round(H_current + delta, 4)
-    predictions[horizon] = H_pred
+    result = predict_with_uncertainty(m["rf"], X_live, H_current)
+    predictions[horizon] = result
+
     h_int  = int(horizon.replace("t","").replace("h",""))
     target_time = now + timedelta(hours=h_int)
-    log.info(f"  {horizon}: H={H_pred:.3f}m  (Δ={delta:+.3f}m)  "
+    log.info(f"  {horizon}: H={result['point']:.3f}m "
+             f"(Δ={result['delta']:+.3f}m) "
+             f"90%CI [{result['lower']:.3f}-{result['upper']:.3f}m] "
+             f"spread={result['spread']:.3f}m  "
              f"valid at {target_time.strftime('%Y-%m-%d %H:%M UTC')}")
 
 # ── 4. SHAP explainability ────────────────────────────────────────────────────
@@ -264,17 +289,19 @@ except ImportError:
 # ── 5. Briefing + logging ─────────────────────────────────────────────────────
 print("\n[5/5] Operational briefing...")
 
-H6  = predictions.get("t6h",  H_current)
-H12 = predictions.get("t12h", H_current)
-H24 = predictions.get("t24h", H_current)
+p6  = predictions.get("t6h",  {"point": H_current, "lower": H_current, "upper": H_current, "delta": 0, "spread": 0})
+p12 = predictions.get("t12h", {"point": H_current, "lower": H_current, "upper": H_current, "delta": 0, "spread": 0})
+p24 = predictions.get("t24h", {"point": H_current, "lower": H_current, "upper": H_current, "delta": 0, "spread": 0})
+H6, H12, H24 = p6["point"], p12["point"], p24["point"]
 
-# Risk level
-if H6 > 3.5 or H12 > 3.5:   risk = "FLOOD_EMERGENCY"
-elif H6 > 2.5:                risk = "FLOOD_ELEVATED"
-elif H6 > 1.5:                risk = "FLOOD_WATCH"
-elif H_current < 0.25:        risk = "DROUGHT_CRITICAL"
-elif H_current < 0.45:        risk = "LOW_FLOW"
-else:                          risk = "NORMAL"
+# Risk level — use upper bound for conservative assessment
+H6_upper = p6["upper"]
+if H6_upper > 3.5 or p12["upper"] > 3.5: risk = "FLOOD_EMERGENCY"
+elif H6_upper > 2.5:                       risk = "FLOOD_ELEVATED"
+elif H6_upper > 1.5:                       risk = "FLOOD_WATCH"
+elif H_current < 0.25:                     risk = "DROUGHT_CRITICAL"
+elif H_current < 0.45:                     risk = "LOW_FLOW"
+else:                                       risk = "NORMAL"
 
 print(f"""
 ╔══════════════════════════════════════════════════════════╗
@@ -283,11 +310,15 @@ print(f"""
 ╠══════════════════════════════════════════════════════════╣
 ║  Current level:    {H_current:.3f} m
 ║  +6h  forecast:    {H6:.3f} m  ({H6-H_current:+.3f} m)
+║              90%CI [{p6['lower']:.3f} – {p6['upper']:.3f} m]
 ║  +12h forecast:    {H12:.3f} m  ({H12-H_current:+.3f} m)
+║              90%CI [{p12['lower']:.3f} – {p12['upper']:.3f} m]
 ║  +24h forecast:    {H24:.3f} m  ({H24-H_current:+.3f} m)
+║              90%CI [{p24['lower']:.3f} – {p24['upper']:.3f} m]
 ║  Risk level:       {risk}
 ║
 ║  Model: RF-deltaH hourly · NSE=0.981 (t+6h flood 2021)
+║  Validation: temporal split · persistence baseline included
 ╚══════════════════════════════════════════════════════════╝""")
 
 # Log forecast
@@ -295,9 +326,15 @@ import csv, os
 log_row = {
     "issued_utc":       datetime.now(timezone.utc).isoformat(),
     "H_current":        round(H_current, 4),
-    "H_pred_t6h":       H6,
-    "H_pred_t12h":      H12,
-    "H_pred_t24h":      H24,
+    "H_pred_t6h":       round(H6, 4),
+    "H_lower_t6h":      round(p6["lower"], 4),
+    "H_upper_t6h":      round(p6["upper"], 4),
+    "H_pred_t12h":      round(H12, 4),
+    "H_lower_t12h":     round(p12["lower"], 4),
+    "H_upper_t12h":     round(p12["upper"], 4),
+    "H_pred_t24h":      round(H24, 4),
+    "H_lower_t24h":     round(p24["lower"], 4),
+    "H_upper_t24h":     round(p24["upper"], 4),
     "target_t6h":       (now + timedelta(hours=6)).isoformat(),
     "target_t12h":      (now + timedelta(hours=12)).isoformat(),
     "target_t24h":      (now + timedelta(hours=24)).isoformat(),
