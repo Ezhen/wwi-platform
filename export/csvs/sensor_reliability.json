@@ -1,19 +1,21 @@
 {
-  "generated": "2026-06-13",
+  "generated": "2026-06-15",
   "n_stations": 98,
-  "grade_A": 69,
-  "grade_B": 4,
-  "grade_C": 24,
+  "grade_A": 68,
+  "grade_B": 2,
+  "grade_C": 27,
   "grade_D": 0,
   "grade_F": 1,
   "offline": [
     "5804"
   ],
   "flatline": [
-    "6526"
+    "L7500",
+    "6526",
+    "L7860"
   ],
   "stale": [],
-  "mean_score": 83.5,
+  "mean_score": 83.3,
   "key_stations": {
     "5826": {
       "score": 90.0,
