@@ -13,6 +13,8 @@ export/databases/*.db
 export/csvs/archive/
 export/netcdfs/
 
+llm_bulletin.py
+
 # Sensitive
 .env
 *.log
@@ -26,3 +28,7 @@ supplementary/corine_extract/
 export/databases/*.db-shm
 export/databases/*.db-wal
 export/databases/*.db-journal
+
+# LLM bulletin generator — keeps Claude API usage and prompt structure
+# out of the public repo; still runs locally via update.sh
+supplementary/llm_bulletin.py

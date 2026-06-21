@@ -111,6 +111,14 @@ wwi/
 ├── llm_bulletin.py                ← LLM bulletin via Claude API
 ├── forecast_verification.py       ← daily skill score log
 │
+├── check_wave_propagation.py      ← per-pair lag estimation, magnitude bins
+├── wave_propagation_confidence.py ← bootstrap CIs on lag (median-based)
+├── detect_events_clustered.py     ← seasonal-baseline event detection + DBSCAN
+├── build_event_catalog.py         ← river-grouped event catalog x lag cross-ref
+├── plot_lag_density.py            ← state-space lag density diagrams
+├── plot_qh_diagram.py             ← Q-H diagrams colored by propagation speed
+├── historical_ingest_events.py    ← event-windowed historical re-ingest
+│
 ├── ingestion/                     ← data collection
 │   ├── spw_ingest.py              ← H/Q/Precip from SPW KiWIS API
 │   ├── piez_ingest.py             ← groundwater
@@ -158,7 +166,7 @@ wwi/
 | Database | Content | Size |
 |----------|---------|------|
 | `spw_liege.db` | H/Q/Precip — 98 stations, 30-day rolling 5-min | ~50 MB |
-| `historical_liege.db` | H/Q/Precip hourly+daily 2021+2023-2025, 15 stations | ~10 MB |
+| `historical_liege.db` | H/Q/Precip hourly+daily 2021+2023-2025, 15 stations across 5 rivers (Vesdre, Ourthe, Amblève, Salm, Meuse) | ~10 MB |
 | `era5_liege.db` | swvl1 daily means 2021-2025, 42 grid points | ~50 MB |
 | `catchments_liege.db` | 95 watershed polygons + slope + CORINE fractions | ~5 MB |
 | `corine_liege.db` | 3,225 land cover polygons | ~2 MB |
@@ -230,6 +238,38 @@ Seven composite multi-signal conditions, evaluated every 6 hours:
 `UPSTREAM_RAPID_RISE` is the key early warning alert — it detects rapid rise at Stavelot/Eupen/Comblain and warns that the wave will reach Sauheid in 6-18h, before any change is visible at the target station.
 
 `ANOMALY_RAIN_NO_RESPONSE` flags physically implausible states — AI that knows when to distrust its own inputs.
+
+---
+
+## River Network Intelligence
+
+Beyond single-station forecasting, the platform characterises how flood waves actually move through the network — travel time between gauges, how that travel time depends on event size, and which "events" in the historical record are genuinely distinct rather than ordinary variability.
+
+```bash
+python check_wave_propagation.py        # per-pair lag estimation + magnitude bins
+python wave_propagation_confidence.py   # bootstrap CIs on lag (median-based)
+python detect_events_clustered.py       # seasonal-baseline event detection + DBSCAN
+python build_event_catalog.py           # river-grouped event catalog, cross-referenced to lag
+python plot_lag_density.py              # state-space (H_up vs H_down) diagrams, colored by lag
+python plot_qh_diagram.py               # Q-H diagrams colored by propagation speed
+```
+
+**Method.** Lag between an upstream and downstream gauge is estimated by cross-correlating smoothed rise-rate (not raw H) on a 15-minute interpolated grid, separately per detected rise event — not assumed from station metadata, since no distance/elevation data exists for the network. Per-event fits are capped so the search window can't run past the next detected event (prevents locking onto a neighbouring event's signal). Confidence intervals are bootstrapped on the **median**, not the mean, after confirming some pairs have a real, heavy-tailed minority of contaminated fits that would otherwise dominate a mean-based estimate.
+
+**Key finding — magnitude-dependent propagation.** Across every connected pair in the network, larger upstream rises propagate measurably faster than small ones — consistent with kinematic wave theory (a fuller channel moves a wave faster).
+
+| River | Upstream → Downstream | Lag, small events | Lag, large events |
+|-------|----------------------|--------------------|--------------------|
+| Vesdre | Eupen → Verviers → Chaudfontaine | ~20h | ~3-4h |
+| Ourthe | Comblain → Sauheid | ~5h | ~3h |
+| Meuse | Namur → Huy → Liège | ~10-11h | ~2-3h |
+| Amblève | Stavelot → Remouchamps | ~10h | ~4-5h |
+
+**Network coverage.** 8 stations with multi-year hourly H across 5 rivers (Vesdre, Ourthe, Amblève, Salm, Meuse) in `historical_liege.db`. Several stations required correcting against the live KiWIS API — wrong station codes, a non-default network prefix (`DCENN` rather than `DGH` for Verviers), and non-standard parameter folder names (`H_sonde`, `Habs_sonde` rather than plain `H`) that had silently produced zero data since the original ingest. Discharge (Q) coverage is sparse network-wide and absent entirely at Namur/Huy/Liège, which currently limits the Q-H propagation-speed analysis to the Ourthe/Vesdre stations that report it.
+
+**Event discovery.** Rather than fixed absolute thresholds, events are detected against a per-station seasonal baseline (±7-day circular day-of-year climatology), separating sustained anomalies (floods/droughts) from rapid-change events (flash-type rises) independent of absolute water level. Clustering the resulting event shapes (peak magnitude, duration, rise rate, recession half-life) via DBSCAN shows that most hydrological variability on this network is a **continuum**, not discrete types — confirmed by inspecting feature histograms directly rather than assumed from cluster count. Only genuine extremes (the July 2021 flood, isolated flash floods) separate out as outliers; there is no natural "moderate flood" archetype distinct from ordinary rises.
+
+**Open question.** Eupen→Verviers (Vesdre) remains the noisiest pair in the network — widest confidence interval, weakest correlation, and a chain-arithmetic mismatch (Eupen→Verviers + Verviers→Chaudfontaine sums to noticeably more than the direct Eupen→Chaudfontaine estimate) that survived the contamination fixes applied to every other pair. A plausible but unconfirmed explanation is the La Hoegne confluence near Verviers introducing a second, independent signal into that station's H series.
 
 ---
 

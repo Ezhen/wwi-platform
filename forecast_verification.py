@@ -105,8 +105,56 @@ else:
 # ── 3. Load or create verification CSV ───────────────────────────────────────
 log.info("\n[3/4] Updating verification log...")
 
+# dtype spec on read: forces direction_correct to a proper pandas
+# nullable boolean (boolean, capital, the pandas extension dtype) the
+# moment the CSV is loaded, instead of letting pandas infer "object"
+# from whatever mix of True/False/0.0/1.0/empty strings previous runs
+# happened to write. This is the actual fix for the crash: it stops
+# the bad dtype from ever entering the in-memory DataFrame, rather
+# than trying to clean it up after the fact every time it's used.
+VER_DTYPES = {
+    "H_obs": "float64",
+    "H_forecast_t1": "float64",
+    "H_forecast_t2": "float64",
+    "H_forecast_t3": "float64",
+    "error_t1": "float64",
+    "abs_error_t1": "float64",
+    "H_persistence": "float64",
+    "error_persistence": "float64",
+    "n_obs_records": "float64",  # float, not int, to tolerate NaN
+}
+
+
+def coerce_direction_correct(series):
+    """
+    Normalise a direction_correct column that may contain any mix of
+    True/False (real bools), "True"/"False" (strings), 1.0/0.0
+    (floats from an older script version), "1.0"/"0.0" (strings of
+    those floats), NaN, or None — into a clean pandas nullable boolean
+    Series. Anything not recognised becomes <NA> (treated as missing,
+    not coerced into True/False by guesswork).
+    """
+    mapping = {
+        True: True, False: False,
+        "True": True, "False": False,
+        "true": True, "false": False,
+        1.0: True, 0.0: False,
+        "1.0": True, "0.0": False,
+        "1": True, "0": False,
+    }
+    return series.map(mapping).astype("boolean")
+
+
 if Path(CSV_VER).exists():
     ver_df = pd.read_csv(CSV_VER, index_col=0, parse_dates=True)
+    # Coerce known-numeric columns explicitly rather than trusting
+    # read_csv's type inference, which is exactly what let the bad
+    # direction_correct dtype slip through silently before.
+    for col, dtype in VER_DTYPES.items():
+        if col in ver_df.columns:
+            ver_df[col] = pd.to_numeric(ver_df[col], errors="coerce").astype(dtype)
+    if "direction_correct" in ver_df.columns:
+        ver_df["direction_correct"] = coerce_direction_correct(ver_df["direction_correct"])
     log.info(f"  Loaded {len(ver_df)} existing verification rows")
 else:
     ver_df = pd.DataFrame(columns=[
@@ -115,6 +163,7 @@ else:
         "H_persistence","error_persistence","n_obs_records"
     ])
     ver_df = ver_df.set_index("date")
+    ver_df["direction_correct"] = ver_df["direction_correct"].astype("boolean")
     log.info("  Created new verification log")
 
 # Add new rows for dates we have both forecast and observed
@@ -138,13 +187,22 @@ for dt in obs_df.index:
     H_pers = float(obs_df.loc[dt_minus1, "H_mean"]) \
              if dt_minus1 in obs_df.index else None
 
-    # Compute errors
-    err_t1 = round(H_fc_t1 - H_obs, 4) if H_fc_t1 else None
-    err_pers = round(H_pers - H_obs, 4) if H_pers else None
+    # Compute errors.
+    # FIX: was `if H_fc_t1 else None` / `if H_pers else None` — a
+    # falsy-value bug. A genuine forecast or persistence value of
+    # exactly 0.0 is a valid, present value, not a missing one, but
+    # `0.0` is falsy in Python so the old condition silently treated
+    # it as "no value" and skipped the calculation. Use explicit
+    # `is not None` checks instead, which only treat true absence
+    # (None) as missing.
+    err_t1 = round(H_fc_t1 - H_obs, 4) if H_fc_t1 is not None else None
+    err_pers = round(H_pers - H_obs, 4) if H_pers is not None else None
 
     # Direction: did model correctly predict rise/fall?
+    # Same falsy-value fix as above: `if H_fc_t1 and H_pers:` would
+    # skip this whenever either value was legitimately 0.0.
     dir_correct = None
-    if H_fc_t1 and H_pers:
+    if H_fc_t1 is not None and H_pers is not None:
         predicted_direction = H_fc_t1 > H_pers
         actual_direction    = H_obs > H_pers
         dir_correct         = predicted_direction == actual_direction
@@ -152,10 +210,10 @@ for dt in obs_df.index:
     new_rows.append({
         "date":             dt,
         "H_obs":            round(H_obs, 4),
-        "H_forecast_t1":    round(H_fc_t1, 4) if H_fc_t1 else None,
-        "H_persistence":    round(H_pers, 4) if H_pers else None,
+        "H_forecast_t1":    round(H_fc_t1, 4) if H_fc_t1 is not None else None,
+        "H_persistence":    round(H_pers, 4) if H_pers is not None else None,
         "error_t1":         err_t1,
-        "abs_error_t1":     abs(err_t1) if err_t1 else None,
+        "abs_error_t1":     abs(err_t1) if err_t1 is not None else None,
         "error_persistence": err_pers,
         "direction_correct": dir_correct,
         "n_obs_records":    int(n_obs),
@@ -163,6 +221,11 @@ for dt in obs_df.index:
 
 if new_rows:
     new_df = pd.DataFrame(new_rows).set_index("date")
+    # Ensure the new rows' direction_correct is a clean nullable
+    # boolean BEFORE concatenating, so it can never reintroduce mixed
+    # dtypes into ver_df even if pandas infers something odd from a
+    # column containing a mix of True/False/None at construction time.
+    new_df["direction_correct"] = new_df["direction_correct"].astype("boolean")
     ver_df = pd.concat([ver_df, new_df])
     ver_df = ver_df.sort_index()
     ver_df.to_csv(CSV_VER)
@@ -182,6 +245,10 @@ if len(valid) > 0:
     nse_num    = ((valid["H_obs"] - valid["H_forecast_t1"])**2).sum()
     nse_den    = ((valid["H_obs"] - valid["H_obs"].mean())**2).sum()
     nse        = 1 - nse_num/nse_den if nse_den > 0 else None
+    # direction_correct is now a clean pandas "boolean" dtype (see
+    # coerce_direction_correct above), so .mean() works directly —
+    # pandas treats True/False as 1/0 for nullable boolean columns and
+    # correctly skips <NA> rows, which is exactly what we want here.
     dir_acc    = valid["direction_correct"].mean() * 100 \
                  if "direction_correct" in valid.columns else None
 
@@ -202,8 +269,12 @@ if len(valid) > 0:
         fc  = f"{row['H_forecast_t1']:.3f}" if pd.notna(row['H_forecast_t1']) else "  N/A"
         err = f"{row['error_t1']:+.3f}"     if pd.notna(row['error_t1'])       else "  N/A"
         per = f"{row['H_persistence']:.3f}" if pd.notna(row['H_persistence'])  else "  N/A"
-        dir_s = "✓" if row.get("direction_correct") else "✗" \
-                if row.get("direction_correct") == False else "—"
+        # row.get("direction_correct") on a pandas "boolean" dtype
+        # value returns pd.NA for missing, True, or False — pd.NA is
+        # falsy-ish but not == False, so the original `== False` check
+        # is kept explicit and still correct here.
+        dir_s = "✓" if row.get("direction_correct") == True else \
+                "✗" if row.get("direction_correct") == False else "—"
         log.info(f"  {dt.date()}  {row['H_obs']:>7.3f} {fc:>7} "
                  f"{err:>7} {per:>7} {dir_s:>10}")
 else:

@@ -13,7 +13,7 @@ python live_explain_hourly.py
 python build_alerts.py
 
 # 5. LLM bulletin
-python llm_bulletin.py
+#python llm_bulletin.py
 
 # 6. Verification log
 python forecast_verification.py
